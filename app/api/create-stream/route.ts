@@ -29,6 +29,26 @@ export async function POST(request: NextRequest) {
     if (!uid) {
       return new Response(JSON.stringify({ error: '创作需要登录', code: 'unauthorized' }), { status: 401, headers: { 'Content-Type': 'application/json' } });
     }
+    // 开源样片必须 fail-closed：先确认所选 GPU profile 真能跑，再进入 LLM / 预算 / 入队。
+    // 明确选 Wan/Hunyuan 时绝不静默改用付费引擎，避免“低成本预览”意外产生 API 账单。
+    const { isOpenVideoProvider, OpenVideoWorkerService, OpenVideoWorkerError } =
+      await import('@/services/open-video-worker.service');
+    if (isOpenVideoProvider(videoProvider)) {
+      try {
+        await new OpenVideoWorkerService().assertReady(videoProvider);
+      } catch (error) {
+        const workerError = error instanceof OpenVideoWorkerError ? error : null;
+        return new Response(JSON.stringify({
+          error: workerError?.message || '开源视频 GPU Worker 未就绪',
+          code: workerError?.code || 'open_video_worker_unavailable',
+          retryable: workerError?.retryable ?? true,
+          provider: videoProvider,
+        }), {
+          status: workerError?.status && workerError.status >= 400 ? workerError.status : 503,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    }
     const { assertBudget } = await import('@/lib/budget-enforce');
     // v12.172:动态估算(镜数×引擎秒单价;创建时剧本未出按 8 镜保守)—— 固定 ¥6 对 Kling 20 镜低估 5-10 倍
     const { estimatePipelineCostCny } = await import('@/lib/budget-estimate');

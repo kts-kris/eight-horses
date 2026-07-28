@@ -100,6 +100,39 @@ export async function updateAsset(
   return r.changes > 0;
 }
 
+/**
+ * 冻结快照后的乐观写：仅资产版本仍等于 expectedVersion 时替换。
+ * 整片重渲过程中若用户手动改过同一镜，本次结果标记 conflict，不覆盖新版本。
+ */
+export async function updateAssetByVersion(
+  projectId: string,
+  id: string,
+  expectedVersion: number,
+  patch: { data: unknown; mediaUrls: string[]; persistentUrl: string | null },
+): Promise<'updated' | 'conflict' | 'missing'> {
+  const driver = getDbDriver();
+  const existing = await driver.get<{ version: number }>(
+    'SELECT version FROM project_assets WHERE id = ? AND project_id = ?',
+    [id, projectId],
+  );
+  if (!existing) return 'missing';
+  const result = await driver.run(
+    `UPDATE project_assets
+     SET data = ?, media_urls = ?, persistent_url = ?, version = version + 1, updated_at = ?
+     WHERE id = ? AND project_id = ? AND version = ?`,
+    [
+      JSON.stringify(patch.data ?? {}),
+      JSON.stringify(patch.mediaUrls ?? []),
+      patch.persistentUrl,
+      new Date().toISOString(),
+      id,
+      projectId,
+      expectedVersion,
+    ],
+  );
+  return result.changes > 0 ? 'updated' : 'conflict';
+}
+
 /** v9.0.1: 带 project 守卫的 data 更新 (WHERE id AND project_id). */
 export async function updateAssetDataInProject(id: string, projectId: string, data: unknown): Promise<boolean> {
   const r = await getDbDriver().run(

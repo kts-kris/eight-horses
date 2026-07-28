@@ -16,6 +16,12 @@ export interface VideoGenerateInput {
   prompt: string;
 
   /**
+   * 用户显式选择的 provider。与 registry 的 priority 不同:它表达产品意图,
+   * 例如开源预览必须只走 wan22,不得失败后静默切到付费引擎。
+   */
+  preferredProvider?: string;
+
+  /**
    * 首帧图 URL. 给了就走 I2V (image-to-video) 模式.
    * 不给走 T2V (text-to-video). 需要 provider supportsImage2Video=true.
    */

@@ -157,8 +157,30 @@ export async function withImagePlugin(
 // ─── Video ────────────────────────────────────────────────────────────────
 
 async function tryVideoPlugin(input: VideoGenerateInput): Promise<PluginAttempt<string>> {
-  const { dispatchVideoGenerate } = await import('./video-providers/registry');
-  const r = await dispatchVideoGenerate(input);
+  const { dispatchVideoGenerate, listVideoProviders } = await import('./video-providers/registry');
+  const aliases: Record<string, string> = {
+    minimax: 'minimax-video',
+    keling: 'kling',
+    'wan2.2': 'wan22',
+    'hunyuanVideo1.5': 'hunyuan-video-15',
+  };
+  const prefer = input.preferredProvider
+    ? (aliases[input.preferredProvider] || input.preferredProvider)
+    : undefined;
+  const openOnly = prefer === 'wan22' || prefer === 'hunyuan-video-15';
+  // 开源预览是明确的成本边界:选了哪个 profile 就只试哪个,绝不静默 fallback 到付费 provider。
+  const exclude = openOnly
+    ? new Set(listVideoProviders().map((p) => p.id).filter((id) => id !== prefer))
+    : undefined;
+  const r = await dispatchVideoGenerate(input, {
+    hasFirstFrame: !!input.firstFrameUrl,
+    hasLastFrame: !!input.lastFrameUrl,
+    // Wan/Hunyuan 会使用首帧或首个主体参考,但不声明多主体 S2V;显式开源选择不因此被过滤。
+    hasSubjectReference: !openOnly && !!input.subjectReferences?.length,
+    durationSec: input.durationSec,
+    prefer,
+    exclude,
+  });
   if (!r.result) {
     const reasons = r.tried.map((t) => t.error).join(' | ').slice(0, 60);
     throw new Error(`video plugin chain empty / all-failed: ${reasons || 'no providers'}`);
@@ -171,7 +193,15 @@ export async function withVideoPlugin(
   fallback: () => Promise<string>,
   onProvider?: (provider?: string) => void, // v12.29.0(P1):回传真出片 provider id(供原生音画判定)
 ): Promise<string> {
-  return runWithPlugin('video', () => tryVideoPlugin(input), fallback, onProvider);
+  let modeOverride: PluginChainMode | undefined;
+  const rawMode = (process.env.PLUGIN_CHAIN_MODE || '').trim().toLowerCase();
+  const explicitlySet = rawMode === 'off' || rawMode === 'primary' || rawMode === 'shadow';
+  const preferred = input.preferredProvider || '';
+  const explicitOpenPreview = ['wan22', 'hunyuan-video-15', 'wan2.2', 'hunyuanVideo1.5'].includes(preferred);
+  // 显式选择开源预览等价于开启这一路 plugin primary;运营者显式 PLUGIN_CHAIN_MODE=off
+  // 仍保留一票否决,避免隐式改变部署行为。
+  if (!explicitlySet && explicitOpenPreview) modeOverride = 'primary';
+  return runWithPlugin('video', () => tryVideoPlugin(input), fallback, onProvider, modeOverride);
 }
 
 // ─── TTS ──────────────────────────────────────────────────────────────────

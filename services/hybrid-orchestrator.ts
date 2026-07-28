@@ -2889,7 +2889,12 @@ ${shots.map((s, i) => {
     });
 
     // ═══ 并发视频生成（可调并发，避免 API 限流；高并发会弱化关键帧链衔接）═══
-    const CONCURRENCY = resolveConcurrency('video'); // v12.32.0 可调:GEN_CONCURRENCY_VIDEO(默认 2)
+    const selectedOpenPreview = videoProvider === 'wan22' || videoProvider === 'hunyuan-video-15';
+    // 单卡本地模型默认只跑 1 路，避免 A10 24GB 被两个 720p diffusion job 同时打爆；
+    // 付费远端 provider 保持既有 GEN_CONCURRENCY_VIDEO 默认 2。
+    const CONCURRENCY = selectedOpenPreview
+      ? Math.max(1, Math.min(2, Number(process.env.OPEN_VIDEO_CONCURRENCY) || 1))
+      : resolveConcurrency('video');
     const generateSingleVideo = async (board: Storyboard, i: number): Promise<VideoClip> => {
       const shot = script?.shots?.find(s => s.shotNumber === board.shotNumber) || script?.shots?.[i];
       const planData = (board as any).planData || {};
@@ -3363,6 +3368,7 @@ ${shots.map((s, i) => {
       const videoUrl: string = await withVideoPlugin(
         {
           prompt: enhancedPrompt,
+          preferredProvider: videoProvider,
           firstFrameUrl: hasFirstFrame ? firstFrameUrl : undefined,
           subjectReferences: mrBundle.subjectImages.length > 0
             ? mrBundle.subjectImages.map((url, idx) => ({ imageUrl: url, name: mrBundle.characterNames[idx] }))
@@ -3379,6 +3385,7 @@ ${shots.map((s, i) => {
       );
       // plugin 命中拿 dispatch provider;否则用 legacy 路径的 usedVideoEngine(veo/minimax/kling)。
       ranVideoProvider = ranVideoProvider || usedVideoEngine;
+      const isOpenPreviewClip = ranVideoProvider === 'wan22' || ranVideoProvider === 'hunyuan-video-15';
       // 本镜成片是否带原生音频:开关 on + 有台词 + 真由原生音频引擎出片(veo/kling/grok/seedance/ltx)。
       const clipNativeAudio = wantNativeAudio && isNativeAudioProvider(ranVideoProvider);
       if (clipNativeAudio) {
@@ -3386,12 +3393,12 @@ ${shots.map((s, i) => {
       }
 
       // v12.4.0:视频成本落库(每个真出片的镜头记一笔;mock 模式零成本不记)。fire-and-forget。
-      if (videoUrl && isValidVideoUrl(videoUrl) && process.env.MOCK_ENGINES !== '1') {
+      if (videoUrl && isValidVideoUrl(videoUrl) && process.env.MOCK_ENGINES !== '1' && !isOpenPreviewClip) {
         void recordCostLog({
           userId: this.userId, projectId: this.projectId,
-          engine: `video-${usedVideoEngine || 'engine'}`,
+          engine: `video-${ranVideoProvider || 'engine'}`,
           durationSec: 8,
-          costCny: estimateVideoCostCny(8, videoRateForProvider(usedVideoEngine)),
+          costCny: estimateVideoCostCny(8, videoRateForProvider(ranVideoProvider)),
           metadata: { shotNumber: board.shotNumber },
         });
       }
@@ -3400,7 +3407,15 @@ ${shots.map((s, i) => {
       // 之前恒 8s → 剪辑层把 3s 设计的爆发镜整段拼成 8s 慢镜;现在让设计时长一路传到 composer 裁切。
       const designedDur = (shot as any)?.duration;
       const clipDuration = designedDur && designedDur > 0 ? Math.max(2, Math.min(designedDur, 8)) : 8;
-      const clip = { shotNumber: board.shotNumber, videoUrl, duration: clipDuration, status: 'completed' as const, nativeAudio: clipNativeAudio };
+      const clip = {
+        shotNumber: board.shotNumber,
+        videoUrl,
+        duration: clipDuration,
+        status: 'completed' as const,
+        nativeAudio: clipNativeAudio,
+        engine: ranVideoProvider,
+        qualityClass: isOpenPreviewClip ? 'open-preview-720p' : 'provider-standard',
+      };
 
       // v2.9 P1 Keyframes: 异步抽末帧存进 shotLastFrames,下一 shot 开始时会读它作参考图
       // fire-and-forget —— 抽帧耗时 ~0.5s,不阻塞主推理流,失败也不影响本 shot 结果

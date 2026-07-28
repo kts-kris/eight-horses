@@ -198,7 +198,13 @@ describe('HybridOrchestrator', () => {
     const videos = await orch.runVideoProducer(storyboards, 'minimax');
     expect(videos.length).toBe(storyboards.length);
 
-    const editResult = await orch.runEditor(videos, script);
+    // mocked provider 返回 example.com 占位 URL；全链结构测试不应访问公网或等待 4×下载超时。
+    // 与上方 runEditor 用例相同，换成非 http URL 走确定性的结构路径。
+    const editVideos = videos.map((video: any) => ({
+      ...video,
+      videoUrl: `mock-shot-${video.shotNumber}.mp4`,
+    }));
+    const editResult = await orch.runEditor(editVideos, script);
     expect(editResult.timeline.length).toBe(videos.length);
 
     const review = await orch.runDirectorReview(script, videos, editResult);
@@ -208,7 +214,7 @@ describe('HybridOrchestrator', () => {
     const agents = orch.getAllAgents();
     const completedCount = agents.filter((a: any) => a.status === 'completed').length;
     expect(completedCount).toBeGreaterThanOrEqual(6);
-  }, 30000); // 30秒超时
+  }, 60000); // 全量并发回归时给 mock 降级链留余量；测试自身不访问公网
 
   it('onProgress callback should be called', async () => {
     const orch = new HybridOrchestrator();

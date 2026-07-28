@@ -8,6 +8,7 @@ import {
   enqueuePipelineJob,
   getPipelineJob,
   getLatestJobByProject,
+  getLatestJobByProjectType,
   claimNextJob,
   heartbeatJob,
   setJobStep,
@@ -54,6 +55,12 @@ describe('v10.4.1 · enqueue / get / claim 状态机', () => {
     db.prepare('UPDATE pipeline_jobs SET created_at = ? WHERE id = ?').run('2026-01-01T00:00:00.000Z', j1.id);
     const j2 = await enqueuePipelineJob({ type: 'create', projectId: 'px', payload: {} });
     expect((await getLatestJobByProject('px'))!.id).toBe(j2.id);
+  });
+
+  it('getLatestJobByProjectType 不被同项目其他类型任务遮住', async () => {
+    const film = await enqueuePipelineJob({ type: 'film-rerender', projectId: 'typed', payload: { fingerprint: 'f1' } });
+    await enqueuePipelineJob({ type: 'create', projectId: 'typed', payload: {} });
+    expect((await getLatestJobByProjectType('typed', 'film-rerender'))?.id).toBe(film.id);
   });
 });
 
@@ -110,6 +117,15 @@ describe('v10.4.1 · 完成 / 失败重试 / 死信', () => {
     await claimNextJob();
     await completeJob(job.id);
     expect((await getPipelineJob(job.id))!.state).toBe('done');
+  });
+
+  it('completeJob 可持久化 partial，并允许只补失败项', async () => {
+    const job = await enqueuePipelineJob({ type: 'film-rerender', projectId: 'partial', payload: {} });
+    await claimNextJob();
+    await completeJob(job.id, 'partial');
+    expect((await getPipelineJob(job.id))!.state).toBe('partial');
+    expect(await requeueJob(job.id)).toBe(true);
+    expect((await getPipelineJob(job.id))!.state).toBe('queued');
   });
 
   it('failJob:attempts 未耗尽 → 重新 queued;3 次后 → failed(死信)', async () => {

@@ -1023,11 +1023,13 @@ export default function DashboardCreatePage() {
 
           {createMode === 'pro' && <div>
             <Eyebrow>Engine · 视频引擎</Eyebrow>
-            <div className="grid grid-cols-3 gap-2 mt-2">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-2 mt-2">
               {[
                 { id: 'veo', label: 'Veo 3.1', sub: 'cinematic · slow' },
                 { id: 'minimax', label: 'Minimax', sub: 'balanced · fast' },
                 { id: 'keling', label: '可灵 AI', sub: '官方API · 已接入' }, // v12.157:key 已接,别名在 engine-order 归一
+                { id: 'wan22', label: 'Wan2.2', sub: '开源 · GPU 低成本样片' },
+                { id: 'hunyuan-video-15', label: '混元 Video 1.5', sub: '开源 · 720p 样片' },
               ].map((v) => (
                 <button
                   key={v.id}

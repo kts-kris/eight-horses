@@ -6,7 +6,7 @@ import { AgentWorkspace } from '@/components/AgentWorkspace';
 import { ConsistencyPanel } from '@/components/ConsistencyPanel';
 import { CameoScoreBadge, type CameoScoreBadgeData } from '@/components/CameoScoreBadge';
 import { useAgentStore } from '@/lib/store';
-import { Sparkle as Sparkles, ArrowLeft, MagicWand as Wand2, Lightning as Zap, Lightbulb, CheckCircle as CheckCircle2, UserCircle as UserCircle2, X } from '@phosphor-icons/react';
+import { Sparkle as Sparkles, ArrowLeft, MagicWand as Wand2, Lightning as Zap, Lightbulb, CheckCircle as CheckCircle2, UserCircle as UserCircle2, X, FilmStrip as Film } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { validateIdea, sanitizeInput } from '@/lib/validation';
@@ -359,7 +359,7 @@ export default function CreatePage() {
                     <label className="block text-sm font-medium text-gray-300 mb-3">
                       {t.create.videoProviderLabel}
                     </label>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
                       <button
                         onClick={() => setVideoProvider('minimax')}
                         className={`p-4 rounded-xl border-2 transition-all ${
@@ -408,6 +408,40 @@ export default function CreatePage() {
                           }`} />
                           <div className="font-semibold mb-1">可灵 AI</div>
                           <div className="text-xs text-gray-400">中文好</div>
+                        </div>
+                      </button>
+
+                      <button
+                        onClick={() => setVideoProvider('wan22')}
+                        className={`p-4 rounded-xl border-2 transition-all ${
+                          videoProvider === 'wan22'
+                            ? 'border-emerald-500 bg-emerald-500/10'
+                            : 'border-white/10 bg-white/5 hover:border-white/20'
+                        }`}
+                      >
+                        <div className="text-center">
+                          <Film className={`w-6 h-6 mx-auto mb-2 ${
+                            videoProvider === 'wan22' ? 'text-emerald-400' : 'text-gray-400'
+                          }`} />
+                          <div className="font-semibold mb-1">Wan2.2</div>
+                          <div className="text-xs text-gray-400">开源低成本样片</div>
+                        </div>
+                      </button>
+
+                      <button
+                        onClick={() => setVideoProvider('hunyuan-video-15')}
+                        className={`p-4 rounded-xl border-2 transition-all ${
+                          videoProvider === 'hunyuan-video-15'
+                            ? 'border-cyan-500 bg-cyan-500/10'
+                            : 'border-white/10 bg-white/5 hover:border-white/20'
+                        }`}
+                      >
+                        <div className="text-center">
+                          <Sparkles className={`w-6 h-6 mx-auto mb-2 ${
+                            videoProvider === 'hunyuan-video-15' ? 'text-cyan-400' : 'text-gray-400'
+                          }`} />
+                          <div className="font-semibold mb-1">混元 Video 1.5</div>
+                          <div className="text-xs text-gray-400">开源 720p 样片</div>
                         </div>
                       </button>
                     </div>

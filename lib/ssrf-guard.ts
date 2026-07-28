@@ -28,7 +28,7 @@ export function isBlockedIp(ip: string): boolean {
   const v = ip.trim().toLowerCase().replace(/^\[|\]$/g, '');
 
   if (net.isIPv4(v)) {
-    const [a, b] = v.split('.').map(Number);
+    const [a, b, c] = v.split('.').map(Number);
     if (a === 0) return true;                       // 0.0.0.0/8
     if (a === 10) return true;                      // 10/8 私网
     if (a === 127) return true;                     // 回环
@@ -37,6 +37,9 @@ export function isBlockedIp(ip: string): boolean {
     if (a === 192 && b === 168) return true;        // 192.168/16 私网
     if (a === 100 && b >= 64 && b <= 127) return true; // 100.64/10 CGNAT
     if (a === 192 && b === 0) return true;          // 192.0.0/24 IETF 协议保留
+    if (a === 198 && (b === 18 || b === 19)) return true; // 198.18/15 网络基准测试段(代理/DNS 污染常用)
+    if (a === 198 && b === 51 && c === 100) return true; // 198.51.100/24 文档段
+    if (a === 203 && b === 0 && c === 113) return true; // 203.0.113/24 文档段
     if (a >= 224) return true;                      // 组播 224/4 + 保留 240/4
     return false;
   }

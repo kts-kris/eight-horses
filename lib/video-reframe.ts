@@ -12,6 +12,7 @@
 import { normalizeVideoAspect, type VideoAspect } from '@/lib/video-aspect';
 
 export type ReframeMode = 'blur-pad' | 'crop';
+export type CanvasResolution = 'preview' | '720p' | '1080p' | '2160p';
 
 /** 目标比例 → 输出像素尺寸(与 veoSizeFromAspect 同口径)。 */
 export function dimsForAspect(a: string): { w: number; h: number } {
@@ -53,8 +54,16 @@ export function buildReframeFilterComplex(target: VideoAspect | string, mode: Re
  *  - 竖屏(h>w):`increase + crop` —— 放大裁满竖框(源片多为引擎出的 16:9,裁两侧填满竖屏,
  *    主体居中的广告/短剧更显专业,优于黑边 letterbox)。
  */
-export function buildCanvasFit(aspect: string): { fit: string; w: number; h: number } {
-  const { w, h } = dimsForAspect(aspect);
+export function buildCanvasFit(
+  aspect: string,
+  resolution: CanvasResolution = 'preview',
+): { fit: string; w: number; h: number } {
+  const base = dimsForAspect(aspect);
+  const longEdge = resolution === '2160p' ? 3840 : resolution === '1080p' ? 1920 : null;
+  const ratio = longEdge ? longEdge / Math.max(base.w, base.h) : 1;
+  // 编码器普遍要求偶数尺寸；四舍五入后再对齐到 2。
+  const w = Math.max(2, Math.round((base.w * ratio) / 2) * 2);
+  const h = Math.max(2, Math.round((base.h * ratio) / 2) * 2);
   const fit = h > w
     ? `scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h}`
     : `scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2`;

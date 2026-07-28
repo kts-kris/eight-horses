@@ -753,6 +753,9 @@ export async function runCreatePipeline(input: CreatePipelineInput, emit: Pipeli
             status: v.status,
             coverImageUrl: v.coverImageUrl || null,
             isAnimatic: !!(v as any).isAnimatic, // v12.150:降级标记落库,批量补渲据此识别
+            engine: v.engine || activeProvider,
+            qualityClass: v.qualityClass || 'provider-standard',
+            generatedAt: new Date().toISOString(),
           }, mediaUrls, v.shotNumber);
         }
       }
@@ -1052,4 +1055,3 @@ async function updateAssetMedia(projectId: string, type: string, name: string, m
     console.error(`[DB] Asset update failed (${type}/${name}):`, e);
   }
 }
-

@@ -11,6 +11,7 @@ import {
   getAsset,
   createAsset,
   updateAsset,
+  updateAssetByVersion,
   deleteAsset,
   countProjectAssets,
 } from '@/lib/repos/asset-repo';
@@ -53,6 +54,30 @@ describe('v4.2.3 · asset-repo CRUD (async через DbDriver)', () => {
     expect(JSON.parse(got!.data).duration).toBe(8);
     expect(JSON.parse(got!.media_urls!)).toEqual(['https://x/v.mp4']);
     expect(await updateAsset(a.id, {})).toBe(false); // empty patch
+  });
+
+  it('updateAssetByVersion 只覆盖冻结版本，冲突时保留用户新改动', async () => {
+    const asset = await createAsset({
+      projectId,
+      type: 'video',
+      name: 'cas-video',
+      data: { quality: 'preview' },
+      mediaUrls: ['https://x/preview.mp4'],
+      shotNumber: 99,
+    });
+    expect(await updateAssetByVersion(projectId, asset.id, asset.version, {
+      data: { quality: '4k' },
+      mediaUrls: ['https://x/4k.mp4'],
+      persistentUrl: 'https://x/4k.mp4',
+    })).toBe('updated');
+    expect(await updateAssetByVersion(projectId, asset.id, asset.version, {
+      data: { quality: 'stale-write' },
+      mediaUrls: ['https://x/stale.mp4'],
+      persistentUrl: 'https://x/stale.mp4',
+    })).toBe('conflict');
+    const current = await getAsset(asset.id);
+    expect(JSON.parse(current!.data).quality).toBe('4k');
+    expect(current!.version).toBe(asset.version + 1);
   });
 
   it('countProjectAssets reflects inserts', async () => {

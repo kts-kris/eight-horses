@@ -85,6 +85,18 @@ Three views of the same engine. **Open on GitHub to watch them animate** — flo
 
 ## 🆕 New in v12 — the quality loop era
 
+**Hybrid preview → final render** — choose **Wan2.2 TI2V-5B** or
+**HunyuanVideo 1.5** for a low-cost 720p review film on an existing ComfyUI GPU.
+After editorial approval, the Shot Workshop can submit one durable whole-film
+**Kling v3 native-4K** job: it freezes shot revisions, estimates cost, preserves
+successful shots across retries, refuses revision conflicts, and recomposes the
+2160p film with the existing CJK subtitles, voiceover, music and timeline.
+Dialogue shots run through Chinese lip-sync again after the 4K visual render;
+if that pass fails, the costly 4K visual is retained and retry resumes from
+lip-sync instead of regenerating the shot. The
+portable authenticated sidecar and deployment preflight live in
+[`workers/open-video/`](workers/open-video/).
+
 **Sketch-Lock storyboarding** — every shot first renders a B/W composition sketch, then the final frame is generated *locked to that composition* (toggle at creation time, or per-shot in the Shot Workshop). Camera language finally survives the diffusion lottery.
 
 **Emotion-driven camera** — shots missing camera movement get one derived from story beats (hook→push-in, chase→handheld, reveal→zoom-in, farewell→pull-out, emotion temperature → push/orbit/crane). Even the Ken Burns degradation follows the intended move.

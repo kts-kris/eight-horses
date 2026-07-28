@@ -20,6 +20,7 @@ import { EmptyState } from '@/components/cinema/primitives';
 import { ExportResolutionDropdown } from './export-resolution-dropdown';
 import { StoryboardRegenModal } from './storyboard-regen-modal';
 import { CandidateGridModal } from './candidate-grid-modal'; // v12.35.0 九宫格候选帧
+import { FilmRerenderPanel } from './film-rerender-panel';
 
 interface Video {
   shotNumber: number;
@@ -130,6 +131,7 @@ export function ShotWorkshopTab({
 
   return (
     <div className="space-y-5">
+      <FilmRerenderPanel projectId={projectId} canUse={canDo4K} />
       {/* 顶部:工坊介绍 + 全局导出 */}
       <div className="cinema-card-hi p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>

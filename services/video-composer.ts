@@ -127,6 +127,7 @@ export interface ComposeOptions {
   musicVolume?: number;        // 配乐音量 0~1，默认 0.3
   voiceoverVolume?: number;    // 配音音量 0~1，默认 0.9
   aspect?: string;             // v12.49.0 成片画幅('16:9'|'9:16'|'1:1'...) — 决定合成画布分辨率;缺省 16:9(旧行为)
+  resolution?: import('@/lib/video-reframe').CanvasResolution; // 预览保持原尺寸；最终重渲可直接合成原生 2160p
   captionStyle?: import('@/lib/caption-style').CaptionPreset; // v12.52.0 字幕风格预设;缺省 clean(零回归)
   voiceoverDurations?: Record<number, number>; // v12.68.0 镜号→TTS 真实时长(karaoke 扫光对齐音频)
   platform?: import('@/lib/caption-style').CaptionPlatform; // v12.79.0 平台安全区(抖音/小红书字幕避让)
@@ -693,7 +694,10 @@ export async function composeVideo(options: ComposeOptions): Promise<ComposeResu
   // 病根:此前每镜预处理硬编码 `scale=1280:720,pad=1280:720` → 无视项目比例,竖屏(9:16)项目
   // 成片仍出 16:9 横屏。改为按 aspect 取画布尺寸 + 适配滤镜(横屏缩入补边=旧行为零回归;竖屏放大裁满)。
   const { buildCanvasFit } = await import('@/lib/video-reframe');
-  const { fit: canvasFit, w: canvasW, h: canvasH } = buildCanvasFit(options.aspect || '16:9');
+  const { fit: canvasFit, w: canvasW, h: canvasH } = buildCanvasFit(
+    options.aspect || '16:9',
+    options.resolution || 'preview',
+  );
   console.log(`[Composer] 画布 ${canvasW}x${canvasH} (aspect=${options.aspect || '16:9'})`);
 
   // ═══ 高光检测 ═══

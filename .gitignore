@@ -58,6 +58,8 @@ next-env.d.ts
 .kokoro-venv/
 *-venv/
 .venv/
+__pycache__/
+*.py[cod]
 /projects.db
 /projects.db-wal
 /projects.db-shm

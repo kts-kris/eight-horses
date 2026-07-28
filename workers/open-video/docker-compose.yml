@@ -1,0 +1,13 @@
+services:
+  open-video-worker:
+    image: python:3.11-slim
+    network_mode: host
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./:/app:ro
+    env_file:
+      - .env
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt &&
+             uvicorn server:app --host 127.0.0.1 --port 6890"

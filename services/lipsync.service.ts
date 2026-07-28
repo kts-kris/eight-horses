@@ -38,6 +38,8 @@ export interface LipSyncResult {
   applied: boolean;
   /** fallback / 失败原因, 给前端提示 + 日志 */
   warning?: string;
+  /** 实际执行的口型 provider，供最终档资产元数据审计。 */
+  provider?: string;
 }
 
 export class LipSyncService {

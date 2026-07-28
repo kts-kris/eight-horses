@@ -31,15 +31,17 @@ Stored inside `PipelineJob.payload`.
 
 | Field | Type | Constraints | Description |
 |---|---|---|---|
-| schemaVersion | integer | `1` | Payload compatibility |
+| version | integer | `1` | Payload compatibility |
+| fingerprint | string | 24-char digest | Deduplication and resume identity |
 | projectId | string | required | Project ID |
-| sourceProjectUpdatedAt | ISO timestamp | required | Frozen project revision |
-| provider | string | required | Preferred final provider |
-| targetQuality | string | `native-4k` | Honest quality class |
+| provider | string | `kling` | Final provider |
+| resolution | string | `2160p` | Native final target |
 | aspectRatio | string | supported project aspect | Final frame shape |
-| concurrency | integer | 1–4 | Bounded provider calls |
-| estimateCny | number | non-negative | Pre-submit estimate |
+| publicBaseUrl | string | public HTTP(S) origin | Resolves persisted media for external lip-sync |
+| concurrency | integer | 1–3 | Bounded provider calls |
+| referenceAssets | object[] | bounded | Frozen character/scene/style asset IDs, versions and URLs |
 | shots | FilmRerenderShot[] | non-empty, unique shot numbers | Frozen work list |
+| createdAt | ISO timestamp | required | Snapshot time |
 
 ### FilmRerenderShot
 
@@ -47,14 +49,14 @@ Stored inside `PipelineJob.payload`.
 |---|---|---|---|
 | shotNumber | integer | >=1, unique | Shot slot |
 | prompt | string | 1–2450 characters | Approved visual prompt |
+| dialogue | string or null | optional | Chinese subtitle/lip-sync intent |
+| audioUrl | string or null | required for dialogue shots | Frozen public voice track |
 | durationSec | integer | 1–15 | Approved duration |
 | firstFrameUrl | string | required for final I2V | Approved storyboard/anchor |
 | lastFrameUrl | string or null | optional | Approved tail frame |
-| referenceImages | string[] | bounded | Approved scene/style refs |
-| subjectReferences | object[] | bounded | Approved character refs |
-| sourceVideoAssetId | string | required | Compare-and-swap target |
-| sourceVideoVersion | integer | >=1 | Revision guard |
-| sourcePreviewUrl | string | required | Fallback and provenance |
+| videoAssetId | string | required | Compare-and-swap target |
+| expectedVersion | integer | >=1 | Revision guard |
+| sourceVideoUrl | string | required | Fallback and provenance |
 
 ### PipelineJobEvent
 
@@ -62,16 +64,14 @@ Backed by existing `pipeline_job_events`.
 
 | Event type | Data | Description |
 |---|---|---|
-| `filmRerenderQueued` | estimate, shot list | Accepted work |
-| `shotStarted` | shot, provider | Provider attempt |
-| `shotProgress` | shot, percent, status | Polling |
-| `shotCompleted` | shot, output, elapsed | Persisted and replaced |
-| `shotFailed` | shot, code, retryable, message | Incomplete shot |
-| `shotConflict` | shot, expected/current version | Source edit guard |
-| `recomposeStarted` | resolution | Final composition |
-| `recomposeCompleted` | final URL, duration | Persisted final |
-| `filmRerenderPartial` | completed, failed | Partial terminal |
-| `filmRerenderCompleted` | completed | Complete terminal |
+| `filmRerenderStarted` | total, fingerprint, quality | Accepted work |
+| `filmRerenderShot` | shot, state, error | Per-shot lifecycle |
+| `filmRerenderProgress` | shot, percent, status | Provider polling |
+| `filmLipSync` | shot, state, error | Post-4K Chinese lip-sync lifecycle |
+| `filmLipSyncProgress` | shot, percent, status | Lip-sync provider polling |
+| `filmRecompose` | state, resolution | Final composition |
+| `filmRecomposeProgress` | percent, status | Composer progress |
+| `filmRerenderCompleted` | complete/partial result | Durable terminal result |
 
 ### ProjectAsset
 
@@ -83,14 +83,18 @@ For successful final shot assets, `data` is replaced with merged metadata contai
 |---|---|---|
 | duration | number | Approved shot duration |
 | quality | `4k` | User-facing quality |
-| qualityClass | `provider-native` | Honest source class |
+| qualityClass | `provider-native-4k` | Honest source class |
 | engine | string | Actual provider |
 | model | string | Actual model/profile when returned |
 | finalRerenderJobId | string | Resume/idempotency marker |
-| sourcePreviewUrl | string | Original preview |
-| sourceAssetVersion | integer | Frozen source version |
-| sourceProjectUpdatedAt | ISO timestamp | Frozen project revision |
-| regeneratedAt | ISO timestamp | Completion time |
+| sourceVideoUrl | string | Original preview |
+| sourceRevision | integer | Frozen source version |
+| finalRerenderFingerprint | string | Frozen job revision identity |
+| finalRerenderVisualFingerprint | string | Preserves paid 4K visual if lip-sync must resume |
+| lipSyncApplied | boolean | Whether final dialogue motion passed lip-sync |
+| lipSyncPending | boolean | Retry resumes lip-sync without regenerating 4K |
+| lipSyncProvider | string or null | Actual lip-sync provider |
+| finalRerenderAt | ISO timestamp | Completion time |
 
 For final film assets, metadata additionally includes `renderState`,
 `targetResolution`, `completedShots`, `failedShots`, and `sourceJobId`.
@@ -118,4 +122,3 @@ No new indexes. Existing indexes satisfy the feature:
 
 No schema migration is required. The existing text state column accepts `partial`, and
 feature-specific structure is stored in versioned JSON payload/metadata.
-

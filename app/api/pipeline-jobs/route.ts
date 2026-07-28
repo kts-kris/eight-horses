@@ -11,7 +11,7 @@ import { listPipelineJobs, type PipelineJobState } from '@/lib/repos/pipeline-jo
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const STATES: PipelineJobState[] = ['queued', 'running', 'done', 'failed'];
+const STATES: PipelineJobState[] = ['queued', 'running', 'done', 'partial', 'failed'];
 
 export async function GET(request: NextRequest) {
   const payload = getUserFromRequest(request);

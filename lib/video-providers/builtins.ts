@@ -78,6 +78,57 @@ async function getLtx() {
   return ltxSvc;
 }
 
+let openVideoSvc: any = null;
+async function getOpenVideoWorker() {
+  if (openVideoSvc) return openVideoSvc;
+  const m = await import('@/services/open-video-worker.service');
+  if (!(m as any).hasOpenVideoWorker?.()) return null;
+  openVideoSvc = new (m as any).OpenVideoWorkerService();
+  return openVideoSvc;
+}
+
+function registerOpenPreviewProvider(
+  id: 'wan22' | 'hunyuan-video-15',
+  name: string,
+  priority: number,
+): void {
+  registerVideoProvider({
+    id,
+    name,
+    priority,
+    supportsImage2Video: true,
+    supportsText2Video: true,
+    supportsLastFrame: false,
+    supportsSubjectReference: false,
+    maxDurationSec: 10,
+    available: () => {
+      try {
+        const m = require('@/services/open-video-worker.service');
+        return m.hasOpenVideoWorker?.() ?? false;
+      } catch { return false; }
+    },
+    async generate(input: VideoGenerateInput) {
+      const svc = await getOpenVideoWorker();
+      if (!svc) throw new Error('Open Video Worker unavailable');
+      const firstFrameUrl = input.firstFrameUrl
+        || input.subjectReferences?.find((r) => /^https?:\/\//.test(r.imageUrl))?.imageUrl;
+      const result = await svc.generateVideo(id, { ...input, firstFrameUrl });
+      return {
+        videoUrl: result.videoUrl,
+        provider: id,
+        durationSec: result.durationSec,
+        upstreamId: result.upstreamId,
+        estCostCny: 0,
+      };
+    },
+  });
+}
+
+// 显式选择时由 preferredProvider 顶到链头并锁定只走所选开源 profile;
+// 未选择时仍受 PLUGIN_CHAIN_MODE 控制,不会抢占现有付费主链。
+registerOpenPreviewProvider('wan22', 'Wan2.2 TI2V-5B (Open Video Worker)', 45);
+registerOpenPreviewProvider('hunyuan-video-15', 'HunyuanVideo-1.5 (Open Video Worker)', 46);
+
 // ─── Provider 1: Veo ──────────────────────────────────────────────────────
 // 优先级 60 — 实测在我们的网关上 Veo 整池稳定性 > Kling > Minimax > Vidu.
 // 不支持 FLF (Kling 独有) / 不支持 S2V (Minimax 独有).
@@ -136,8 +187,9 @@ registerVideoProvider({
   async generate(input: VideoGenerateInput) {
     const svc = await getKling();
     if (!svc) throw new Error('Kling service unavailable');
-    // 首尾帧融合走 FLF 通道
-    if (input.firstFrameUrl && input.lastFrameUrl) {
+    const native4K = input.resolution === '4k' || input.resolution === '2160p';
+    // 首尾帧融合走 FLF 通道；Kling 当前 4K API 与 image_tail 互斥，最终档优先原生 4K。
+    if (!native4K && input.firstFrameUrl && input.lastFrameUrl) {
       const url = await svc.generateFirstLastFrame(
         input.firstFrameUrl,
         input.lastFrameUrl,
@@ -158,6 +210,7 @@ registerVideoProvider({
       resolution: input.resolution,
       aspectRatio: input.aspectRatio, // v12.14.0 横竖屏
       mode: input.mode || 'standard',
+      render4K: native4K,
       subjectReferences: input.subjectReferences,
       referenceImages: input.referenceImages,
       onProgress: input.onProgress,

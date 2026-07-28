@@ -9,7 +9,7 @@
 import { nanoid } from 'nanoid';
 import { getDbDriver } from '../db-driver';
 
-export type PipelineJobState = 'queued' | 'running' | 'done' | 'failed';
+export type PipelineJobState = 'queued' | 'running' | 'done' | 'partial' | 'failed';
 
 export interface PipelineJobRow {
   id: string;
@@ -74,6 +74,17 @@ export async function getLatestJobByProject(projectId: string): Promise<Pipeline
   const r = await getDbDriver().get<any>(
     'SELECT * FROM pipeline_jobs WHERE project_id = ? ORDER BY created_at DESC LIMIT 1',
     [projectId],
+  );
+  return r ? rowToJob(r) : null;
+}
+
+export async function getLatestJobByProjectType(
+  projectId: string,
+  type: string,
+): Promise<PipelineJobRow | null> {
+  const r = await getDbDriver().get<any>(
+    'SELECT * FROM pipeline_jobs WHERE project_id = ? AND type = ? ORDER BY created_at DESC LIMIT 1',
+    [projectId, type],
   );
   return r ? rowToJob(r) : null;
 }
@@ -144,9 +155,9 @@ export async function getJobProgressLog(id: string): Promise<ProgressEvent[]> {
   try { return r.progress_log ? JSON.parse(r.progress_log) : []; } catch { return []; }
 }
 
-export async function completeJob(id: string): Promise<void> {
+export async function completeJob(id: string, state: 'done' | 'partial' = 'done'): Promise<void> {
   const t = nowIso();
-  await getDbDriver().run(`UPDATE pipeline_jobs SET state = 'done', updated_at = ? WHERE id = ?`, [t, id]);
+  await getDbDriver().run('UPDATE pipeline_jobs SET state = ?, updated_at = ? WHERE id = ?', [state, t, id]);
 }
 
 /**
@@ -194,13 +205,13 @@ export async function listPipelineJobs(
 }
 
 /**
- * v10.4.2: 死信重投 —— 仅 failed 可重投(防止把 running 投成双跑)。
+ * 死信/部分完成重投 —— 仅 failed/partial 可重投(防止把 running 投成双跑)。
  * 保留 attempts(>1 → worker 走续跑断点装载,不重复生成);清 last_error。
  * 每次手动重投给一次新机会:下次失败 attempts 已超限 → 直接回死信。
  */
 export async function requeueJob(id: string): Promise<boolean> {
   const r = await getDbDriver().run(
-    `UPDATE pipeline_jobs SET state = 'queued', last_error = '', updated_at = ? WHERE id = ? AND state = 'failed'`,
+    `UPDATE pipeline_jobs SET state = 'queued', last_error = '', updated_at = ? WHERE id = ? AND state IN ('failed','partial')`,
     [nowIso(), id],
   );
   return (r.changes ?? 0) > 0;

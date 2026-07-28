@@ -78,6 +78,7 @@ async function runJob(job: NonNullable<Awaited<ReturnType<typeof claimNextJob>>>
   // v10.4.2: 流水线内部致命错误是「发 error 事件后正常返回」(SSE 语义,不抛)——
   // worker 据此判失败,否则空跑/早退任务会被误标 done,死信重投就形同虚设。
   let fatalError = '';
+  let terminalState: 'done' | 'partial' = 'done';
   const emit = (type: string, data: unknown) => {
     emitPipeline(job.id, type, data);
     if (type === 'error') {
@@ -93,7 +94,13 @@ async function runJob(job: NonNullable<Awaited<ReturnType<typeof claimNextJob>>>
   };
 
   try {
-    if (job.type === 'voice-retake') {
+    if (job.type === 'film-rerender') {
+      // 整片 4K 重渲有自己的逐镜 partial 语义：失败镜头不抹掉成功镜头，
+      // 下次从资产 metadata 续跑，只补未完成部分。
+      const { runFilmRerenderJob } = await import('./film-rerender');
+      const result = await runFilmRerenderJob(job.id, job.payload as any, emit);
+      terminalState = result.state;
+    } else if (job.type === 'voice-retake') {
       // v10.6.4: 重录队列 —— 按 type 派发;重试 = 重跑(单句 TTS 幂等成本低,失败句留面板可单录)
       const { runVoiceRetakeJob } = await import('./voice-retake');
       await runVoiceRetakeJob(job.payload as any, emit);
@@ -119,8 +126,8 @@ async function runJob(job: NonNullable<Awaited<ReturnType<typeof claimNextJob>>>
       await markProjectFailedIfTerminal(job, state);
       console.error(`[PipelineWorker] ${state === 'queued' ? 'retrying' : 'FAILED'} ${job.id} (pipeline error): ${fatalError.slice(0, 120)}`);
     } else {
-      await completeJob(job.id);
-      console.log(`[PipelineWorker] done ${job.id}`);
+      await completeJob(job.id, terminalState);
+      console.log(`[PipelineWorker] ${terminalState} ${job.id}`);
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
