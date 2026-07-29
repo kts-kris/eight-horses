@@ -1,6 +1,6 @@
 # Open Video Worker
 
-这是 Wind Comic 对现有 ComfyUI 的鉴权 sidecar，不安装或替换 ComfyUI。它提供：
+这是 Eight-Horses 对现有 ComfyUI 的鉴权 sidecar，不安装或替换 ComfyUI。它提供：
 
 - `GET /health`：检查 ComfyUI、GPU、Wan2.2 / HunyuanVideo 1.5 工作流。
 - `POST /v1/video/generations`：提交 720p T2V / I2V。
@@ -13,7 +13,7 @@
 2. 复制 `.env.example` 为 `.env`，填入随机 Token 和反向代理后的 HTTPS 公网地址。
 3. 运行 `docker compose up -d`；sidecar 只监听 `127.0.0.1:6890`。
 4. 由已有 HTTPS 反向代理暴露 `6890`，不要直接开放裸 HTTP。
-5. 在 Wind Comic 服务设置同一 `OPEN_VIDEO_WORKER_URL` 与 `OPEN_VIDEO_WORKER_TOKEN`。
+5. 在 Eight-Horses 服务设置同一 `OPEN_VIDEO_WORKER_URL` 与 `OPEN_VIDEO_WORKER_TOKEN`。
 6. 执行 `sh preflight.sh`，两个 profile 均为 `ready: true` 后再允许创作。
 
 仓库已固定一份官方模板快照；需要刷新时可显式运行 `python fetch_templates.py`。模板来自官方

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Eight Horses — 低成本样片到原生 4K 成片" width="100%" />
+  <img src="assets/banner.png" alt="Eight-Horses — 低成本样片到原生 4K 成片" width="100%" />
 </p>
 
-<h1 align="center">🐎 Eight Horses 八骏 <sub><sup>v12.263</sup></sub></h1>
+<h1 align="center">🐎 Eight-Horses 八骏 <sub><sup>v12.263</sup></sub></h1>
 
 <p align="center">
   <b>一句话进,整片短剧出 —— 剧本 · 角色 · 分镜 · 配音 · 时间线 · mp4 一条龙.</b><br/>
@@ -17,19 +17,19 @@
   <a href="README.md">English</a> · <b>简体中文</b> · <a href="docs/MARKETING-zh.md">🔥 营销文案</a> · <a href="docs/llm-providers.md">🔌 接你自己的 LLM</a>
 </p>
 
-> **Eight Horses 版本说明：**本仓库是
+> **Eight-Horses 版本说明：**本仓库是
 > [ChrisChen667788/wind-comic](https://github.com/ChrisChen667788/wind-comic)
 > 的独立衍生版本，基于上游提交 `ef473fcd`。新增“双档出片”工作流：
 > 在既有 ComfyUI GPU 上使用 Wan2.2 或 HunyuanVideo 1.5 生成低成本 720p
 > 审片样片，确认后再一键使用 Kling v3 原生 4K 整片重渲；保留中文配音、
 > CJK 字幕、口型续跑、预算门禁、版本冻结和失败镜头断点续跑。完整说明见
-> [Eight Horses 改造说明](docs/EIGHT-HORSES.md)。原项目 MIT 版权与署名保持不变。
+> [Eight-Horses 改造说明](docs/EIGHT-HORSES.md)。原项目 MIT 版权与署名保持不变。
 
 ---
 
-## ✨ 为什么选 Wind Comic?
+## ✨ 为什么选 Eight-Horses?
 
-大多数 "AI 视频" 工具给你 5 秒短片. **Wind Comic 给你一整部短剧** — 剧本 + 角色 + 多镜分镜 + 配音 + BGM + 嘴型对齐的口播 + 最终 mp4 — 全部从同一句创意开始.
+大多数 "AI 视频" 工具给你 5 秒短片. **Eight-Horses 给你一整部短剧** — 剧本 + 角色 + 多镜分镜 + 配音 + BGM + 嘴型对齐的口播 + 最终 mp4 — 全部从同一句创意开始.
 
 它不试图做"一个超大模型把全干了". 它是一条**诚实的多 Agent 流水线**: 每个角色 (编剧 / 导演 / 角色师 / 分镜师 / 锁脸 / 嘴型 / 剪辑) 都是专家, 用严格的一致性契约逐步交付. 再叠一层**实时多人时间线**, 像 Figma 一样多人改片.
 
@@ -53,7 +53,7 @@
 
 同一套引擎的三种视角。**在 GitHub 上打开即会动** —— 流动虚线 = 实时数据/控制走向,移动光点 = 在流水线里穿行的数据包。
 
-<p align="center"><img src="assets/diagrams/architecture.svg" alt="Wind Comic 系统架构图" width="100%" /></p>
+<p align="center"><img src="assets/diagrams/architecture.svg" alt="Eight-Horses 系统架构图" width="100%" /></p>
 
 <sub>**系统架构** —— 自上而下五层。**导演**把控制线穿过全部 8 个 Agent;**LLM 网关**零改码 DeepSeek → MiniMax 兜底;**12+ 媒体引擎**统一挂在一个路由后;最终全部落到**双驱动**(SQLite ⇄ PostgreSQL)平台。</sub>
 
@@ -88,7 +88,7 @@
 > v3 交付了流水线;**v6 做成生产级工作室,v7–v9 夯成平台,v10 闭合口型 / 模板市场 / 成本三条线。** 可复用角色库、提示词 IDE、长篇小说→自动分集 + 真配音、60 套风格画廊、导演级控片台、团队积分预算、行业级剧本诊断(Polish Pro v7.1)、精品化设计(v8.3)、**全量 Postgres 双驱动后端(v9)**、**配音口型交付管线 + 模板市场 + 成本可观测(v10)**,以及实时 API 健康看板 —— 下方每一张都是**运行中产品的真实截图**。
 
 <p align="center">
-  <img src="assets/v10/landing.png" alt="Wind Comic 首页 —— 青枫漫剧 AI 动画 Agent 工作室,8 智能体 · 7 引擎 · 3 一致性守护,循环影院级 hero" width="100%" />
+  <img src="assets/v10/landing.png" alt="Eight-Horses 首页 —— 青枫漫剧 AI 动画 Agent 工作室,8 智能体 · 7 引擎 · 3 一致性守护,循环影院级 hero" width="100%" />
   <br/><sub>v10 首页 —— 循环影院级 hero,8 协作智能体 · 7 视频引擎 · 3 一致性守护。</sub>
 </p>
 
@@ -171,9 +171,9 @@
 
 ---
 
-## 🎯 谁该用 Wind Comic?
+## 🎯 谁该用 Eight-Horses?
 
-| 你是... | Wind Comic 能给你什么 |
+| 你是... | Eight-Horses 能给你什么 |
 |---|---|
 | **竖屏短剧创作者** (霸总 / 重生 / 战神 / 古装) | trope 感知的编剧, 第 1 镜钩子起手, 反转密度审计, cliffhanger 检测, 默认 9:16 |
 | **内容营销团队** | 1 句 idea → 30 秒精修广告片, 角色跨镜一致, 中文字幕真烧入, 品牌安全负向 prompt |
@@ -225,10 +225,10 @@ Kling lip-sync API 做口播口型, 自动 fallback 到 Sync.so / Hailuo. 流水
 
 ## 🥊 跟竞品比
 
-> 阵容核验 2026-07-06:Artificial Analysis 盲投竞技场(**带音频文生视频榜**,口径与上轮无音频榜不同)—— **Dreamina Seedance 2.0 720p 榜首(Elo 1223)**;**阿里双线爆发:Wan2.7-260612 次席(1161,新入榜)**、HappyHorse-1.1 第三(1154);**SkyReels V4(Skywork,1109)首次入榜**,与 Kling 3.0 1080p Pro(1109)并列;Wan 2.7 / Kling 3.0 Omni 紧随(1104/1100)。**Veo 3.1** 仍是画质/物理/原生 48kHz 音轨王者(4K,企业首选);**Kling 3.0** 被多家评为「性价比冠军」(多语对白+lip sync);**Runway Gen-4.5** 控制面最强;**Sora 2** 关停时间线再确认(App 2026-04-26 已下线、API 2026-09-24 关停,勿作依赖)。**广告垂直层新对标**:Creatify(商品 URL→批量变体+ROAS 分析,$33/mo 起)与 Arcads(拟真 AI 演员 UGC)双雄互补 —— Wind Comic 广告工厂对位:brief/URL→成片→Hook A/B 变体→发布包全链自托管+BYO,正是这两家闭源 SaaS 的开源合体路线。
-> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Wind Comic 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
+> 阵容核验 2026-07-06:Artificial Analysis 盲投竞技场(**带音频文生视频榜**,口径与上轮无音频榜不同)—— **Dreamina Seedance 2.0 720p 榜首(Elo 1223)**;**阿里双线爆发:Wan2.7-260612 次席(1161,新入榜)**、HappyHorse-1.1 第三(1154);**SkyReels V4(Skywork,1109)首次入榜**,与 Kling 3.0 1080p Pro(1109)并列;Wan 2.7 / Kling 3.0 Omni 紧随(1104/1100)。**Veo 3.1** 仍是画质/物理/原生 48kHz 音轨王者(4K,企业首选);**Kling 3.0** 被多家评为「性价比冠军」(多语对白+lip sync);**Runway Gen-4.5** 控制面最强;**Sora 2** 关停时间线再确认(App 2026-04-26 已下线、API 2026-09-24 关停,勿作依赖)。**广告垂直层新对标**:Creatify(商品 URL→批量变体+ROAS 分析,$33/mo 起)与 Arcads(拟真 AI 演员 UGC)双雄互补 —— Eight-Horses 广告工厂对位:brief/URL→成片→Hook A/B 变体→发布包全链自托管+BYO,正是这两家闭源 SaaS 的开源合体路线。
+> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Eight-Horses 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
 
-| 能力 | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Grok Imagine 1.5 | HappyHorse-1.1 | **Wind Comic** |
+| 能力 | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Grok Imagine 1.5 | HappyHorse-1.1 | **Eight-Horses** |
 |---|---|---|---|---|---|---|---|
 | 一句 prompt 多镜叙事 | ⚠️ | ✅ 故事板模式 | ✅ 原生多镜 | ⚠️ | ⚠️ (单条片) | ⚠️ (单条片) | **✅ 8 智能体 编剧→剪辑 流水线** |
 | 跨镜角色一致性 | ✅ | ✅ | ✅ | ✅ 参考图 | ✅ | ✅ 参考图生视频 | **✅ cref+sref+8 维 DNA+vision 重生** |
@@ -375,5 +375,5 @@ MIT. 用它 / fork 它 / 拿它创业. 唯一请求: 你做了酷功能就提 PR
 
 <p align="center">
   Built with ❤️ — 我们相信 AI 生成的剧应该像剧, 不是科技 demo.<br/>
-  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star 一下</a> 如果 Eight Horses 给你省了一周.
+  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star 一下</a> 如果 Eight-Horses 给你省了一周.
 </p>

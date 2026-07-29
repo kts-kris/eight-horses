@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Eight Horses — low-cost preview to native-4K final film" width="100%" />
+  <img src="assets/banner.png" alt="Eight-Horses — low-cost preview to native-4K final film" width="100%" />
 </p>
 
-<h1 align="center">🐎 Eight Horses <sub><sup>v12.263</sup></sub></h1>
+<h1 align="center">🐎 Eight-Horses <sub><sup>v12.263</sup></sub></h1>
 
 <p align="center">
   <b>One sentence in. A finished short-form drama out — script, cast, storyboards, voiceover, timeline, mp4.</b><br/>
@@ -28,7 +28,7 @@
 
 <p align="center">
   <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4">
-    <img src="assets/promo/wind-comic-promo.gif" alt="Wind Comic — 39-second promo (click to watch with voiceover &amp; sound)" width="100%" />
+    <img src="assets/promo/wind-comic-promo.gif" alt="Eight-Horses — 39-second promo (click to watch with voiceover &amp; sound)" width="100%" />
   </a>
 </p>
 <p align="center">
@@ -36,20 +36,20 @@
   <sub>Real cinematic footage woven with motion-graphics · 8 distinct art styles · English narration · scored by the platform's own MiniMax music engine.</sub>
 </p>
 
-> **Eight Horses edition.** This repository is an independent derivative of
+> **Eight-Horses edition.** This repository is an independent derivative of
 > [ChrisChen667788/wind-comic](https://github.com/ChrisChen667788/wind-comic),
 > based on upstream commit `ef473fcd`. It adds a two-tier production workflow:
 > low-cost 720p previews on an existing ComfyUI GPU with Wan2.2 or
 > HunyuanVideo 1.5, followed by one-click Kling v3 native-4K whole-film
 > rerendering with Chinese voiceover, CJK subtitles, lip-sync resume, budget
-> guards, and revision-safe retries. See [Eight Horses notes](docs/EIGHT-HORSES.md).
+> guards, and revision-safe retries. See [Eight-Horses notes](docs/EIGHT-HORSES.md).
 > The original MIT copyright and attribution are preserved.
 
 ---
 
-## ✨ Why Wind Comic?
+## ✨ Why Eight-Horses?
 
-Most "AI video" tools give you a 5-second clip from a one-line prompt. **Wind Comic gives you a finished short-form drama** — script, character bible, multi-shot storyboards, voice-acted lines, BGM, mouth-synced characters (indicative 2D lip bar out of the box; photorealistic face-level lip-sync via BYO wav2lip/SadTalker/MuseTalk or Kling), and a final mp4 — from the same single line.
+Most "AI video" tools give you a 5-second clip from a one-line prompt. **Eight-Horses gives you a finished short-form drama** — script, character bible, multi-shot storyboards, voice-acted lines, BGM, mouth-synced characters (indicative 2D lip bar out of the box; photorealistic face-level lip-sync via BYO wav2lip/SadTalker/MuseTalk or Kling), and a final mp4 — from the same single line.
 
 It works because it doesn't try to be one giant model. It's an **honest multi-agent pipeline** where each role (Writer, Director, Producer, Character Designer, Storyboard Artist, Cameo Locker, Lipsync, Editor) is a specialist that hands off with strict consistency contracts. Plus a **real-time multiplayer timeline** to edit with your team like Figma for film.
 
@@ -76,7 +76,7 @@ It works because it doesn't try to be one giant model. It's an **honest multi-ag
 
 Three views of the same engine. **Open on GitHub to watch them animate** — flowing dashes trace live data &amp; control paths, traveling dots are data packets moving through the pipeline.
 
-<p align="center"><img src="assets/diagrams/architecture.svg" alt="Wind Comic system architecture — Next.js client · orchestration · 8-agent pipeline · LLM gateway · 12+ media engines · quality / data / realtime platform" width="100%" /></p>
+<p align="center"><img src="assets/diagrams/architecture.svg" alt="Eight-Horses system architecture — Next.js client · orchestration · 8-agent pipeline · LLM gateway · 12+ media engines · quality / data / realtime platform" width="100%" /></p>
 
 <sub>**System architecture** — five layers, top to bottom. The **Director** threads control across all eight agents; the **LLM gateway** falls back DeepSeek → MiniMax with zero code change; **12+ media engines** plug in behind one router; everything lands on a **dual-driver** (SQLite ⇄ PostgreSQL) platform.</sub>
 
@@ -123,7 +123,7 @@ portable authenticated sidecar and deployment preflight live in
 > v3 shipped the pipeline. **v6 turned it into a production studio; v7–v9 hardened it into a platform; v10 closed the lip-sync, template-market, and cost loops.** Reusable characters, a prompt IDE, novel→season auto-splitting with real voiceover, a 60-style gallery, a director's control room, team credit budgets, an industry-grade script audit (**Polish Pro**, v7.1), a **premium design pass** (v8.3), a **fully-migrated Postgres backend** (v9), a **lip-sync delivery pipeline + template market + cost observability** (v10), and a live API health board — every screen below is a **real capture of the running app**.
 
 <p align="center">
-  <img src="assets/v10/landing.png" alt="Wind Comic landing — 青枫漫剧 AI Animation Agent Studio, 8 agents · 7 engines · 3 consistency guards, looping cinematic hero" width="100%" />
+  <img src="assets/v10/landing.png" alt="Eight-Horses landing — 青枫漫剧 AI Animation Agent Studio, 8 agents · 7 engines · 3 consistency guards, looping cinematic hero" width="100%" />
   <br/><sub>v10 landing — looping cinematic hero, 8 collaborating agents · 7 media engines · 3 consistency guards.</sub>
 </p>
 
@@ -168,7 +168,7 @@ Every stage at a glance — what's ready, what's gone stale because you changed 
 <p align="center"><img src="assets/v10/director-console.png" width="100%" /></p>
 
 ### 📖 Novel → season, with real voiceover *(v6.2)*
-Paste a full novel; Wind Comic splits it into episodes by chapter markers (or by target length), picks a narration mode, and can render a real narration track + burnable subtitles for the whole season in parallel.
+Paste a full novel; Eight-Horses splits it into episodes by chapter markers (or by target length), picks a narration mode, and can render a real narration track + burnable subtitles for the whole season in parallel.
 <p align="center"><img src="assets/v10/story-intake.png" width="100%" /></p>
 
 ### 🎨 Style Gallery — 60 cinematic looks, one click *(v6.3)*
@@ -203,7 +203,7 @@ One project, eleven tabs of cockpit-grade control: 导演台 · 剧本 · 角色
 
 ## 🎯 Who is this for?
 
-| You are... | What Wind Comic gives you |
+| You are... | What Eight-Horses gives you |
 |---|---|
 | **Vertical short-drama creator** (霸总 / 重生 / 战神 / 古装) | Trope-aware Writer, hook-first shot 1, reversal density audit, cliffhanger detection, 9:16 default |
 | **Content marketing team** | 1 idea → 30-second polished ad with consistent characters across cuts, real Chinese subtitles burnt in, brand-safe negative prompts |
@@ -257,9 +257,9 @@ Every feature listed above is in `main`, type-checked, unit-tested, and visible 
 
 > 阵容核验 2026-07-24(Artificial Analysis 盲投竞技场):**格局易主 —— 谷歌 Gemini Omni Flash 登顶双榜**。它把 text/image/audio/video 统一进一个多模态架构(此前 Gemini 各模态分开再交给专用模型),并支持**对话式视频编辑**(自然语言迭代改片、保留不动的部分)。**带音频文生视频榜:Gemini Omni Flash 榜首(Elo 1245)** → Dreamina Seedance 2.0 720p(1227)→ Wan2.7-260612(1164)→ HappyHorse-1.1(1152)→ HappyHorse-1.0(1131);**图生视频带音频:Gemini Omni Flash(1200)** → Seedance 2.0 720p(1198)→ Grok Imagine 1.5(1118)→ HappyHorse-1.1(1110)→ Wan2.7(1099)。**Veo 3.1** 仍是画质/物理/原生 48kHz 音轨的企业安全牌(4K);**Kling 3.0** 性价比冠军(~$0.50/clip,短剧首选,多语对白+lip sync);**Sora 2** 关停时间线不变(App 已下线、API 2026-09-24 关停,勿依赖)。**⭐ 我方 BYO 架构已可直接接住这波**:v12.238 起 `GEMINI_API_KEY` 一填即启用 Gemini 图像(Nano Banana)provider —— 竞品登顶反而成了本管线可调度的引擎,「引擎越强我们越强」。
 > **v12.214→244 双线推进**。**产品层**:GPT Image / Nano Banana(Gemini)接入插件式图像 provider 链(issue #11,社区 @flobo3 提议,`OPENAI_IMAGE_ENABLED` / `GEMINI_API_KEY` 门控、原生 i2i 接角色一致性契约);**多集连续生成补上「剧情记忆」**(第 N 集 Writer 注入前几集前情提要 + 承接纪律,对标红果/阅文的 60~100 集连续,此前各集独立成篇)。**平台/工程层**:六轮独立对抗复检把安全洞从 CRITICAL 到 LOW 全清(SSRF 逐跳重验重定向 + IPv6 全隧道变体 / serve-file 签名能力 URL / WebSocket 鉴权 / 预算护栏),并把反复踩的「改了守卫却没跟到消费方」这个病**固化成 CI 入库门禁**(`npm run gate:consumer`,零容忍,上线即抓到 2 个人肉复检漏掉的真 SSRF)。
-> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Wind Comic 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
+> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Eight-Horses 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
 
-| Capability | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Gemini Omni Flash | HappyHorse-1.1 | **Wind Comic** |
+| Capability | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Gemini Omni Flash | HappyHorse-1.1 | **Eight-Horses** |
 |---|---|---|---|---|---|---|---|
 | Multi-shot story from one prompt | ⚠️ | ✅ storyboard mode | ✅ multi-shot native | ⚠️ | ⚠️(单段生成,多镜叙事非强项) | ⚠️ (one clip) | **✅ 8-agent script→edit pipeline** |
 | Character consistency across shots | ✅ | ✅ | ✅ | ✅ reference | ✅ 多模态统一 | ✅ reference-to-video | **✅ cref + sref + 8-dim DNA + vision retry** |
@@ -478,7 +478,7 @@ MIT. Use it, fork it, build a startup on it. We just ask: if you ship a feature 
 
 ### ⚠️ Redistribution notice — bundled binaries are not all MIT
 
-**Wind Comic's own source is MIT.** But three npm dependencies ship pre-built binaries under copyleft licenses. This does **not** affect the MIT status of this repository, and it does not affect you if you simply run or fork the source. It **does** matter the moment you redistribute a bundle that embeds those binaries (a Docker image, a desktop build, a hosted appliance you hand to a customer):
+**Eight-Horses source is MIT.** But three npm dependencies ship pre-built binaries under copyleft licenses. This does **not** affect the MIT status of this repository, and it does not affect you if you simply run or fork the source. It **does** matter the moment you redistribute a bundle that embeds those binaries (a Docker image, a desktop build, a hosted appliance you hand to a customer):
 
 | Dependency | License | What you must do when redistributing a bundle |
 |---|---|---|
@@ -492,7 +492,7 @@ CI enforces this: [`scripts/license-check.mjs`](scripts/license-check.mjs) scans
 
 ## 🙏 Acknowledgements
 
-Wind Comic stands on a lot of excellent open-source work:
+Eight-Horses stands on a lot of excellent open-source work:
 
 - **App & UI** — [Next.js](https://nextjs.org) (App Router + Turbopack) · [React 19](https://react.dev) · [Tailwind CSS v4](https://tailwindcss.com) · [Radix UI](https://www.radix-ui.com) · [Phosphor Icons](https://phosphoricons.com) + [Lucide](https://lucide.dev) · [Framer Motion](https://www.framer.com/motion/) · [React Flow](https://reactflow.dev) for the agent-workflow DAG
 - **Realtime & data** — [Yjs](https://github.com/yjs/yjs) + [y-websocket](https://github.com/yjs/y-websocket) for **CRDT** real-time collaboration · [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) + [node-postgres](https://node-postgres.com) for the dual-driver persistence layer
@@ -515,7 +515,7 @@ Found something? Issues and PRs are genuinely read — several of the pipeline's
 
 ## ⭐ Star History
 
-If Wind Comic saved you time, a star helps other creators find it.
+If Eight-Horses saved you time, a star helps other creators find it.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kts-kris/eight-horses&type=Date)](https://star-history.com/#kts-kris/eight-horses&Date)
 
@@ -523,5 +523,5 @@ If Wind Comic saved you time, a star helps other creators find it.
 
 <p align="center">
   Built with ❤️ by people who believe AI-generated drama should feel like a show, not a tech demo.<br/>
-  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star us</a> if Eight Horses saved you a week.
+  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star us</a> if Eight-Horses saved you a week.
 </p>
