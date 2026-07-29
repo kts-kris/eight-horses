@@ -1,10 +1,10 @@
 <!-- 由 scripts/gen-modelscope-intro.mjs 从 README.md 自动生成: 图片→raw、相对链→blob 绝对化, 其余逐字不变. 全选复制粘贴到 ModelScope 项目「介绍」区即与 GitHub 主页一致. 勿手改本文件, 改 README.md 后重跑脚本. -->
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/banner.png" alt="Wind Comic — One line of text. One finished short drama." width="100%" />
+  <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/banner.png" alt="Eight-Horses — low-cost preview to native-4K final film" width="100%" />
 </p>
 
-<h1 align="center">🌬️ Wind Comic <sub><sup>v12.263</sup></sub></h1>
+<h1 align="center">🐎 Eight-Horses <sub><sup>v12.263</sup></sub></h1>
 
 <p align="center">
   <b>One sentence in. A finished short-form drama out — script, cast, storyboards, voiceover, timeline, mp4.</b><br/>
@@ -16,33 +16,42 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ChrisChen667788/wind-comic/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
-  <a href="https://github.com/ChrisChen667788/wind-comic/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/ChrisChen667788/wind-comic/ci.yml?branch=main&label=CI&logo=github" alt="CI" /></a>
-  <a href="https://github.com/ChrisChen667788/wind-comic/stargazers"><img src="https://img.shields.io/github/stars/ChrisChen667788/wind-comic?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/kts-kris/eight-horses/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://github.com/kts-kris/eight-horses/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kts-kris/eight-horses/ci.yml?branch=main&label=CI&logo=github" alt="CI" /></a>
+  <a href="https://github.com/kts-kris/eight-horses/stargazers"><img src="https://img.shields.io/github/stars/kts-kris/eight-horses?style=social" alt="GitHub stars" /></a>
   <img src="https://img.shields.io/badge/Tests-3527%2F3527-2ea44f"  alt="3527 tests passing" />
   <img src="https://img.shields.io/badge/Node-20%2B-339933?logo=node.js&logoColor=white" alt="Node 20+" />
   <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js 16" />
 </p>
 
 <p align="center">
-  <b>English</b> · <a href="https://github.com/ChrisChen667788/wind-comic/blob/main/README.zh-CN.md">简体中文</a> · <a href="https://github.com/ChrisChen667788/wind-comic/blob/main/docs/MARKETING-en.md">🔥 Pitch</a> · <a href="https://github.com/ChrisChen667788/wind-comic/blob/main/docs/llm-providers.md">🔌 BYO LLM</a>
+  <b>English</b> · <a href="https://github.com/kts-kris/eight-horses/blob/main/README.zh-CN.md">简体中文</a> · <a href="https://github.com/kts-kris/eight-horses/blob/main/docs/MARKETING-en.md">🔥 Pitch</a> · <a href="https://github.com/kts-kris/eight-horses/blob/main/docs/llm-providers.md">🔌 BYO LLM</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4">
-    <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/promo/wind-comic-promo.gif" alt="Wind Comic — 39-second promo (click to watch with voiceover &amp; sound)" width="100%" />
+  <a href="https://github.com/kts-kris/eight-horses/raw/main/assets/promo/wind-comic-promo-en.mp4">
+    <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/promo/wind-comic-promo.gif" alt="Eight-Horses — 39-second promo (click to watch with voiceover &amp; sound)" width="100%" />
   </a>
 </p>
 <p align="center">
-  ▶ <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4"><b>Watch the full 39-second promo — with voiceover &amp; sound</b></a><br/>
+  ▶ <a href="https://github.com/kts-kris/eight-horses/raw/main/assets/promo/wind-comic-promo-en.mp4"><b>Watch the full 39-second promo — with voiceover &amp; sound</b></a><br/>
   <sub>Real cinematic footage woven with motion-graphics · 8 distinct art styles · English narration · scored by the platform's own MiniMax music engine.</sub>
 </p>
 
+> **Eight-Horses edition.** This repository is an independent derivative of
+> [ChrisChen667788/wind-comic](https://github.com/ChrisChen667788/wind-comic),
+> based on upstream commit `ef473fcd`. It adds a two-tier production workflow:
+> low-cost 720p previews on an existing ComfyUI GPU with Wan2.2 or
+> HunyuanVideo 1.5, followed by one-click Kling v3 native-4K whole-film
+> rerendering with Chinese voiceover, CJK subtitles, lip-sync resume, budget
+> guards, and revision-safe retries. See [Eight-Horses notes](https://github.com/kts-kris/eight-horses/blob/main/docs/EIGHT-HORSES.md).
+> The original MIT copyright and attribution are preserved.
+
 ---
 
-## ✨ Why Wind Comic?
+## ✨ Why Eight-Horses?
 
-Most "AI video" tools give you a 5-second clip from a one-line prompt. **Wind Comic gives you a finished short-form drama** — script, character bible, multi-shot storyboards, voice-acted lines, BGM, mouth-synced characters (indicative 2D lip bar out of the box; photorealistic face-level lip-sync via BYO wav2lip/SadTalker/MuseTalk or Kling), and a final mp4 — from the same single line.
+Most "AI video" tools give you a 5-second clip from a one-line prompt. **Eight-Horses gives you a finished short-form drama** — script, character bible, multi-shot storyboards, voice-acted lines, BGM, mouth-synced characters (indicative 2D lip bar out of the box; photorealistic face-level lip-sync via BYO wav2lip/SadTalker/MuseTalk or Kling), and a final mp4 — from the same single line.
 
 It works because it doesn't try to be one giant model. It's an **honest multi-agent pipeline** where each role (Writer, Director, Producer, Character Designer, Storyboard Artist, Cameo Locker, Lipsync, Editor) is a specialist that hands off with strict consistency contracts. Plus a **real-time multiplayer timeline** to edit with your team like Figma for film.
 
@@ -69,23 +78,35 @@ It works because it doesn't try to be one giant model. It's an **honest multi-ag
 
 Three views of the same engine. **Open on GitHub to watch them animate** — flowing dashes trace live data &amp; control paths, traveling dots are data packets moving through the pipeline.
 
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/diagrams/architecture.png" alt="Wind Comic system architecture — Next.js client · orchestration · 8-agent pipeline · LLM gateway · 12+ media engines · quality / data / realtime platform" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/diagrams/architecture.png" alt="Eight-Horses system architecture — Next.js client · orchestration · 8-agent pipeline · LLM gateway · 12+ media engines · quality / data / realtime platform" width="100%" /></p>
 
 <sub>**System architecture** — five layers, top to bottom. The **Director** threads control across all eight agents; the **LLM gateway** falls back DeepSeek → MiniMax with zero code change; **12+ media engines** plug in behind one router; everything lands on a **dual-driver** (SQLite ⇄ PostgreSQL) platform.</sub>
 
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/diagrams/sequence.png" alt="Sequence diagram — one idea to one finished film, with the Vision-Audit retry loop and multi-engine race" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/diagrams/sequence.png" alt="Sequence diagram — one idea to one finished film, with the Vision-Audit retry loop and multi-engine race" width="100%" /></p>
 
 <sub>**Sequence** — the lifecycle of one *idea → film* request, time flowing down. Two signature beats: the **Vision-Audit retry loop** (auto-regenerate any shot scoring &lt; 70) and the **multi-engine race** (Seedance / Kling / Veo / Vidu — first good clip wins).</sub>
 
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/diagrams/dataflow.png" alt="Data-flow diagram — the artifact refinery from text to final.mp4, persisted to DbDriver and the asset store" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/diagrams/dataflow.png" alt="Data-flow diagram — the artifact refinery from text to final.mp4, persisted to DbDriver and the asset store" width="100%" /></p>
 
 <sub>**Data flow** — the artifact refinery. One line of text is refined stage-by-stage (`TEXT → JSON → PNG → IMG → MP4`); every artifact is persisted to the dual-driver DB + asset store and is independently reusable, so any stage can be re-run in isolation.</sub>
 
-> 🎞️ Diagrams are **animated SVG, authored as code** in [`assets/diagrams/`](https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/diagrams/) — crisp at any zoom, versioned with the source. *(Animation renders on GitHub; the ModelScope mirror shows static PNG.)*
+> 🎞️ Diagrams are **animated SVG, authored as code** in [`assets/diagrams/`](https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/diagrams/) — crisp at any zoom, versioned with the source. *(Animation renders on GitHub; the ModelScope mirror shows static PNG.)*
 
 ---
 
 ## 🆕 New in v12 — the quality loop era
+
+**Hybrid preview → final render** — choose **Wan2.2 TI2V-5B** or
+**HunyuanVideo 1.5** for a low-cost 720p review film on an existing ComfyUI GPU.
+After editorial approval, the Shot Workshop can submit one durable whole-film
+**Kling v3 native-4K** job: it freezes shot revisions, estimates cost, preserves
+successful shots across retries, refuses revision conflicts, and recomposes the
+2160p film with the existing CJK subtitles, voiceover, music and timeline.
+Dialogue shots run through Chinese lip-sync again after the 4K visual render;
+if that pass fails, the costly 4K visual is retained and retry resumes from
+lip-sync instead of regenerating the shot. The
+portable authenticated sidecar and deployment preflight live in
+[`workers/open-video/`](https://github.com/kts-kris/eight-horses/blob/main/workers/open-video/).
 
 **Sketch-Lock storyboarding** — every shot first renders a B/W composition sketch, then the final frame is generated *locked to that composition* (toggle at creation time, or per-shot in the Shot Workshop). Camera language finally survives the diffusion lottery.
 
@@ -104,7 +125,7 @@ Three views of the same engine. **Open on GitHub to watch them animate** — flo
 > v3 shipped the pipeline. **v6 turned it into a production studio; v7–v9 hardened it into a platform; v10 closed the lip-sync, template-market, and cost loops.** Reusable characters, a prompt IDE, novel→season auto-splitting with real voiceover, a 60-style gallery, a director's control room, team credit budgets, an industry-grade script audit (**Polish Pro**, v7.1), a **premium design pass** (v8.3), a **fully-migrated Postgres backend** (v9), a **lip-sync delivery pipeline + template market + cost observability** (v10), and a live API health board — every screen below is a **real capture of the running app**.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/landing.png" alt="Wind Comic landing — 青枫漫剧 AI Animation Agent Studio, 8 agents · 7 engines · 3 consistency guards, looping cinematic hero" width="100%" />
+  <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/landing.png" alt="Eight-Horses landing — 青枫漫剧 AI Animation Agent Studio, 8 agents · 7 engines · 3 consistency guards, looping cinematic hero" width="100%" />
   <br/><sub>v10 landing — looping cinematic hero, 8 collaborating agents · 7 media engines · 3 consistency guards.</sub>
 </p>
 
@@ -116,18 +137,18 @@ Three views of the same engine. **Open on GitHub to watch them animate** — flo
 
 <table>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/create.png" /><br/><sub><b>创作工坊</b> — one line → film: style presets · multi-ref element shelf · character lock · live preview · gold-neon genre gallery</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/templates.png" /><br/><sub><b>模板市场</b> — preview clips · ★ ratings / ♥ favorites · quality score · one-click remix (carries voices)</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/create.png" /><br/><sub><b>创作工坊</b> — one line → film: style presets · multi-ref element shelf · character lock · live preview · gold-neon genre gallery</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/templates.png" /><br/><sub><b>模板市场</b> — preview clips · ★ ratings / ♥ favorites · quality score · one-click remix (carries voices)</sub></td>
 </tr>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/qc.png" /><br/><sub><b>成片质检 + 配音口型</b> — four-dimension publish gate · consistency trend · viseme track (animated mouth + measured alignment) · per-shot Vision scores</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/cost.png" /><br/><sub><b>技术监看 · 成本归因</b> — per-stage cost share (video / image / LLM / TTS / lip-sync) + saving hints</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/qc.png" /><br/><sub><b>成片质检 + 配音口型</b> — four-dimension publish gate · consistency trend · viseme track (animated mouth + measured alignment) · per-shot Vision scores</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/cost.png" /><br/><sub><b>技术监看 · 成本归因</b> — per-stage cost share (video / image / LLM / TTS / lip-sync) + saving hints</sub></td>
 </tr>
 </table>
 
 > Every screen above is a **real capture of the running v10 app**. Design language (v8.3 *Taste* pass — Plus Jakarta Sans + Phosphor icons, gold machined-bezel cards, spring motion, AI gold-neon genre emblems) carries across all of them.
 
-> Notes are consolidated **per major version** — the full minor-by-minor changelog lives in [`VERSIONS.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/VERSIONS.md) / [`ROADMAP.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/ROADMAP.md).
+> Notes are consolidated **per major version** — the full minor-by-minor changelog lives in [`VERSIONS.md`](https://github.com/kts-kris/eight-horses/blob/main/VERSIONS.md) / [`ROADMAP.md`](https://github.com/kts-kris/eight-horses/blob/main/ROADMAP.md).
 
 | Major version | What landed |
 |---|---|
@@ -146,37 +167,37 @@ Three views of the same engine. **Open on GitHub to watch them animate** — flo
 
 ### 🎬 Director Console — the whole film as one control room *(v6.4)*
 Every stage at a glance — what's ready, what's gone stale because you changed something upstream, and a one-click rerun that knows exactly which downstream stages it invalidates.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/director-console.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/director-console.png" width="100%" /></p>
 
 ### 📖 Novel → season, with real voiceover *(v6.2)*
-Paste a full novel; Wind Comic splits it into episodes by chapter markers (or by target length), picks a narration mode, and can render a real narration track + burnable subtitles for the whole season in parallel.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/story-intake.png" width="100%" /></p>
+Paste a full novel; Eight-Horses splits it into episodes by chapter markers (or by target length), picks a narration mode, and can render a real narration track + burnable subtitles for the whole season in parallel.
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/story-intake.png" width="100%" /></p>
 
 ### 🎨 Style Gallery — 60 cinematic looks, one click *(v6.3)*
 Lock a consistent visual identity before you generate. Search, filter by category, and apply any preset straight into the creation workshop.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/styles.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/styles.png" width="100%" /></p>
 
 ### 🩺 API Health Board — never get surprised by a dead key *(v6.7)*
 Live status for every model and gateway: 正常 / 额度用尽 / 配置缺失 / 不可达, with real balance read-out and a "去充值 / 补配置" hint. Keys are never stored or returned.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/health.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/health.png" width="100%" /></p>
 
 ### 🩺 Polish Studio — Pro industry audit *(v7.1)*
 Paste a draft, hit **Pro**: deepseek-v4-pro returns a polished script **plus a full industry diagnostic** — AIGC-pipeline readiness score (e.g. 85/100), style profile, first-3-second hook strength, Save-the-Cat 3-act breakdown with missing beats called out, on-the-nose dialogue lines flagged, and per-character Cameo/Seedance identity anchors so every shot stays on-model.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/polish-pro-audit.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/polish-pro-audit.png" width="100%" /></p>
 
 ### 👤 Character Studio + Cameo IP turnaround *(v6.0 / v7.x)*
 Every character gets a real 3-view turnaround sheet (front / three-quarter / back) with a locked structured "DNA prompt" — face geometry, skin tone, signature props, color palette, silhouette identity, full body pose — so the same actor reads identically across all 6 shots. The Cameo IP economy lets the same character travel between projects.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/character-studio.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/character-studio.png" width="100%" /></p>
 
 ### 🎬 Finished film + 11-tab director station *(v8.0)*
 One project, eleven tabs of cockpit-grade control: 导演台 · 剧本 · 角色 · 场景 · 分镜 · 连贯性 · 视频 · 镜头工坊 · Cinema 时间线 · 节奏分析 · 成片质检 · 技术监看 · 参数联动 · 评论协作 · 完整播放. The finished film plays right in the workspace with a 90/100 audit badge and one-click `mp4` / platform export.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/final-film.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/final-film.png" width="100%" /></p>
 
 ### 👥 Team Workspace *(v6.5)*  ·  🎞️ Cinema Timeline + narration track *(v6.2.4)*
 <table>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/team.png" /><br/><sub>Credit pool + per-member allocations, RBAC, real invite links.</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v10/cinema-timeline.png" /><br/><sub>Multi-track timeline; narration audio + subtitles burned in.</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/team.png" /><br/><sub>Credit pool + per-member allocations, RBAC, real invite links.</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v10/cinema-timeline.png" /><br/><sub>Multi-track timeline; narration audio + subtitles burned in.</sub></td>
 </tr>
 </table>
 
@@ -184,7 +205,7 @@ One project, eleven tabs of cockpit-grade control: 导演台 · 剧本 · 角色
 
 ## 🎯 Who is this for?
 
-| You are... | What Wind Comic gives you |
+| You are... | What Eight-Horses gives you |
 |---|---|
 | **Vertical short-drama creator** (霸总 / 重生 / 战神 / 古装) | Trope-aware Writer, hook-first shot 1, reversal density audit, cliffhanger detection, 9:16 default |
 | **Content marketing team** | 1 idea → 30-second polished ad with consistent characters across cuts, real Chinese subtitles burnt in, brand-safe negative prompts |
@@ -227,7 +248,7 @@ Kling lip-sync API for talking heads, with Sync.so and Hailuo as auto-fallback. 
 After Writer finishes, we score each shot 0-10 on a Chinese-conflict-word dictionary + detect emotional polarity reversals + cliffhanger keywords. If a vertical drama has <2 reversals or shot-1 conflict <5, you see a warning in the dedicated Pacing tab with actionable suggestions.
 
 ### 9. **Bring Your Own LLM** (v3.1.3)
-Every text-LLM call (Director / Writer / Vision / Audit) goes through one OpenAI-compatible `chat/completions` endpoint. Want to swap to DeepSeek-r1 / GPT-4o / Claude (via OpenRouter) / Qwen-Max / local Ollama? **Edit 3 lines in `.env`. Zero code change.** See [`docs/llm-providers.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/llm-providers.md) for the full matrix.
+Every text-LLM call (Director / Writer / Vision / Audit) goes through one OpenAI-compatible `chat/completions` endpoint. Want to swap to DeepSeek-r1 / GPT-4o / Claude (via OpenRouter) / Qwen-Max / local Ollama? **Edit 3 lines in `.env`. Zero code change.** See [`docs/llm-providers.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/llm-providers.md) for the full matrix.
 
 ### 10. **3527 tests, TypeScript strict, no fake "coming soon"s**
 Every feature listed above is in `main`, type-checked, unit-tested, and visible at `/projects/[id]` if you `npm install && npm run dev` right now.
@@ -238,9 +259,9 @@ Every feature listed above is in `main`, type-checked, unit-tested, and visible 
 
 > 阵容核验 2026-07-24(Artificial Analysis 盲投竞技场):**格局易主 —— 谷歌 Gemini Omni Flash 登顶双榜**。它把 text/image/audio/video 统一进一个多模态架构(此前 Gemini 各模态分开再交给专用模型),并支持**对话式视频编辑**(自然语言迭代改片、保留不动的部分)。**带音频文生视频榜:Gemini Omni Flash 榜首(Elo 1245)** → Dreamina Seedance 2.0 720p(1227)→ Wan2.7-260612(1164)→ HappyHorse-1.1(1152)→ HappyHorse-1.0(1131);**图生视频带音频:Gemini Omni Flash(1200)** → Seedance 2.0 720p(1198)→ Grok Imagine 1.5(1118)→ HappyHorse-1.1(1110)→ Wan2.7(1099)。**Veo 3.1** 仍是画质/物理/原生 48kHz 音轨的企业安全牌(4K);**Kling 3.0** 性价比冠军(~$0.50/clip,短剧首选,多语对白+lip sync);**Sora 2** 关停时间线不变(App 已下线、API 2026-09-24 关停,勿依赖)。**⭐ 我方 BYO 架构已可直接接住这波**:v12.238 起 `GEMINI_API_KEY` 一填即启用 Gemini 图像(Nano Banana)provider —— 竞品登顶反而成了本管线可调度的引擎,「引擎越强我们越强」。
 > **v12.214→244 双线推进**。**产品层**:GPT Image / Nano Banana(Gemini)接入插件式图像 provider 链(issue #11,社区 @flobo3 提议,`OPENAI_IMAGE_ENABLED` / `GEMINI_API_KEY` 门控、原生 i2i 接角色一致性契约);**多集连续生成补上「剧情记忆」**(第 N 集 Writer 注入前几集前情提要 + 承接纪律,对标红果/阅文的 60~100 集连续,此前各集独立成篇)。**平台/工程层**:六轮独立对抗复检把安全洞从 CRITICAL 到 LOW 全清(SSRF 逐跳重验重定向 + IPv6 全隧道变体 / serve-file 签名能力 URL / WebSocket 鉴权 / 预算护栏),并把反复踩的「改了守卫却没跟到消费方」这个病**固化成 CI 入库门禁**(`npm run gate:consumer`,零容忍,上线即抓到 2 个人肉复检漏掉的真 SSRF)。
-> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Wind Comic 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
+> 结论不变:**生成层已是红海(竞品在出片/多镜/音频都第一梯队),Eight-Horses 护城河收窄到「制作/平台层」**——节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO。
 
-| Capability | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Gemini Omni Flash | HappyHorse-1.1 | **Wind Comic** |
+| Capability | Veo 3.1 | Kling 3.0 | Seedance 2.0 | Runway Gen-4.5 | Gemini Omni Flash | HappyHorse-1.1 | **Eight-Horses** |
 |---|---|---|---|---|---|---|---|
 | Multi-shot story from one prompt | ⚠️ | ✅ storyboard mode | ✅ multi-shot native | ⚠️ | ⚠️(单段生成,多镜叙事非强项) | ⚠️ (one clip) | **✅ 8-agent script→edit pipeline** |
 | Character consistency across shots | ✅ | ✅ | ✅ | ✅ reference | ✅ 多模态统一 | ✅ reference-to-video | **✅ cref + sref + 8-dim DNA + vision retry** |
@@ -283,21 +304,21 @@ Real puppeteer captures of the running app (`node scripts/capture-v12.mjs`). 核
 
 | 我的项目 · 删除/下架管理 | 拉片表 + 复刻工作台 |
 |---|---|
-| ![我的项目](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/01-my-projects-manage.png) | ![拉片](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/04-pull-sheet-replicate.png) |
+| ![我的项目](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/01-my-projects-manage.png) | ![拉片](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/04-pull-sheet-replicate.png) |
 
 | 素材库 · 资产管理 | API 健康 · 模型雷达 |
 |---|---|
-| ![素材库](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/02-my-assets-manage.png) | ![模型雷达](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/03-api-health-model-radar.png) |
+| ![素材库](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/02-my-assets-manage.png) | ![模型雷达](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/03-api-health-model-radar.png) |
 
 | 钩子审计三指标 | 一句指令调剪辑风格(v12.0.4) |
 |---|---|
-| ![钩子审计](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/05-pacing-hook-audit.png) | ![剪辑风格](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/06-edit-style-instruction.png) |
+| ![钩子审计](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/05-pacing-hook-audit.png) | ![剪辑风格](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/06-edit-style-instruction.png) |
 
 | 片段预览音频:三态徽章 + 带声试听(v12.1.2) | |
 |---|---|
-| ![片段音频预览](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/screenshots/v12/07-clip-audio-preview.png) | 左:带配音(TTS 叠层)+ 带声试听开关 · 右:片段无独立音轨(成片含配乐+配音) |
+| ![片段音频预览](https://github.com/kts-kris/eight-horses/blob/main/docs/screenshots/v12/07-clip-audio-preview.png) | 左:带配音(TTS 叠层)+ 带声试听开关 · 右:片段无独立音轨(成片含配乐+配音) |
 
-完整逐版本核心迭代见 [`VERSIONS.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/VERSIONS.md);阶段计划见 `docs/stage18`–`docs/stage20`。
+完整逐版本核心迭代见 [`VERSIONS.md`](https://github.com/kts-kris/eight-horses/blob/main/VERSIONS.md);阶段计划见 `docs/stage18`–`docs/stage20`。
 
 ---
 
@@ -307,39 +328,39 @@ Below is the **foundational v3 pipeline** (the v6 studio screens are in the [New
 
 ### Workspace overview
 The 创作总览 dashboard: 99 projects + 4 case studies + recent activity feed + system status (engines in use, model versions).
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-dashboard-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-dashboard-v3.1.3.png" width="100%" /></p>
 
 ### Asset library
 Cross-project reusable: 角色 / 场景 / 视频 / 音乐 / 字幕 / 模板 — 1467 assets in this demo project.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-assets-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-assets-v3.1.3.png" width="100%" /></p>
 
 ### Project library
 Every short film with auto-generated cinematic covers + status badges + quality donut.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-projects-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-projects-v3.1.3.png" width="100%" /></p>
 
 ### Creation workspace — live multi-agent canvas
 The whole pipeline as a live agent flow: Writer / Character Designer / Scene Designer / Storyboard Artist / Video Producer / Editor nodes wired together with progress streaming per node, plus a chat side-rail showing every agent message in real time.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/creation-canvas.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/creation-canvas.png" width="100%" /></p>
 
 ### Per-project script + shot list with beats
 The 剧本 tab: every shot with duration, emotion tag (警觉 / 凝重 / 惊恐 / 暴风的沉着 / 镇定的专注…) and a one-line **beat note** (从表面到深层警觉 / 从无知到悉知威胁 / 从警戒到遭受袭击 …) so the rhythm of the cut is legible at a glance.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/script-shotlist.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/script-shotlist.png" width="100%" /></p>
 
 ### 🆕 Cinema Timeline (v3.1.1–v3.1.3 — multi-track + collab)
 3-track layout (SHOTS / BGM / SUBTITLE), drag-to-retime, double-click subtitles to rewrite, drag edges to resize, **real BGM waveform** (Web Audio decode), live other-user cursors with name labels, segment lock indicators.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-cinema-timeline-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-cinema-timeline-v3.1.3.png" width="100%" /></p>
 
 ### 🆕 Pacing Analysis (v2.21 P1.4)
 KPI: 平均冲突分 / 反转数 / 通过状态. Per-shot conflict-score bar chart with reversal arrows + emotional polarity icons. Color-coded green (≥7) / amber (4-6) / red (<4). Below: actionable warnings + suggestions.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-pacing-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-pacing-v3.1.3.png" width="100%" /></p>
 
 ### 🆕 Comments + @mentions (v3.0 P0.1)
 Project-level + per-shot threaded comments with @-autocomplete and notification bell. Each shot collapses for context.
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-comments-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-comments-v3.1.3.png" width="100%" /></p>
 
 ### 🆕 Shot Workshop (v2.16 P1.4 + v2.23 P0.2)
 Per-shot "改 prompt 重生" (regenerate image with custom prompt + reference image upload) and "4K 重渲" (Kling Master 4K re-render, plan-gated).
-<p align="center"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/screenshot-workshop-v3.1.3.png" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/screenshot-workshop-v3.1.3.png" width="100%" /></p>
 
 ---
 
@@ -391,7 +412,7 @@ Every model call is provider-pluggable (priority chain + automatic fallback). Cr
 - **Why two LLM tiers**: the creative tier (DeepSeek `-pro`, a reasoning model) carries writer/director quality work; the general tier (Claude `sonnet-4-6`) handles high-frequency planning / validation / Vision-Audit; the `-flash` tier keeps draft-compare & basic polish at sub-second latency.
 - **MiniMax safety net**: any primary LLM / video / image failure auto-routes to MiniMax (OpenAI-compatible) — surfaced live on the **API Health Board** (正常 / 额度用尽 / 配置缺失 / 不可达).
 - **XVERSE-Ent** is an **open-source MoE screenwriting model** you can self-host (vLLM / SGLang / ModelScope) and slot in as the writer/director LLM — set `XVERSE_ENABLED=true`.
-- **Swap anything** in `.env.local` (`OPENAI_*` / `OPENAI_CREATIVE_*` / `VEO_*` / `IMAGE_MODEL` / `VE_TTS_MODEL` / `MINIMAX_*`) — zero code change. See [`docs/llm-providers.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/llm-providers.md).
+- **Swap anything** in `.env.local` (`OPENAI_*` / `OPENAI_CREATIVE_*` / `VEO_*` / `IMAGE_MODEL` / `VE_TTS_MODEL` / `MINIMAX_*`) — zero code change. See [`docs/llm-providers.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/llm-providers.md).
 
 ---
 
@@ -399,8 +420,8 @@ Every model call is provider-pluggable (priority chain + automatic fallback). Cr
 
 ```bash
 # 1. clone + install
-git clone https://github.com/ChrisChen667788/wind-comic.git
-cd wind-comic
+git clone https://github.com/kts-kris/eight-horses.git
+cd eight-horses
 npm install
 
 # 2. configure (3 mandatory lines, see docs/llm-providers.md for swaps)
@@ -439,17 +460,17 @@ We're open to PRs. Two things matter most:
 1. **Don't break the multi-agent contracts.** Each agent has explicit input/output shapes — see `types/agents.ts`.
 2. **Tests gate everything.** Vitest 3527/3527 must stay green. Add tests for new lib/service files.
 
-See [`CONTRIBUTING.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/CONTRIBUTING.md) for the repo's contribution guide.
+See [`CONTRIBUTING.md`](https://github.com/kts-kris/eight-horses/blob/main/CONTRIBUTING.md) for the repo's contribution guide.
 
 ---
 
 ## 📚 Docs
 
-- [`docs/llm-providers.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/llm-providers.md) — Swap LLM provider in 3 env vars
-- [`docs/SCREENSHOTS.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/SCREENSHOTS.md) — Module-by-module screenshot manifest
-- [`docs/MARKETING-en.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/MARKETING-en.md) · [`docs/MARKETING-zh.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/MARKETING-zh.md) — Pitch deck copy
-- [`ROADMAP.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/ROADMAP.md) — Full sprint-by-sprint changelog (v2.10 → v9.2.0) · [`VERSIONS.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/VERSIONS.md) — version history table
-- [`docs/COMPETITIVE-GAP-2026-05.md`](https://github.com/ChrisChen667788/wind-comic/blob/main/docs/COMPETITIVE-GAP-2026-05.md) — Honest analysis vs Sora/Kling/Vidu/Higgsfield
+- [`docs/llm-providers.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/llm-providers.md) — Swap LLM provider in 3 env vars
+- [`docs/SCREENSHOTS.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/SCREENSHOTS.md) — Module-by-module screenshot manifest
+- [`docs/MARKETING-en.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/MARKETING-en.md) · [`docs/MARKETING-zh.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/MARKETING-zh.md) — Pitch deck copy
+- [`ROADMAP.md`](https://github.com/kts-kris/eight-horses/blob/main/ROADMAP.md) — Full sprint-by-sprint changelog (v2.10 → v9.2.0) · [`VERSIONS.md`](https://github.com/kts-kris/eight-horses/blob/main/VERSIONS.md) — version history table
+- [`docs/COMPETITIVE-GAP-2026-05.md`](https://github.com/kts-kris/eight-horses/blob/main/docs/COMPETITIVE-GAP-2026-05.md) — Honest analysis vs Sora/Kling/Vidu/Higgsfield
 
 ---
 
@@ -459,7 +480,7 @@ MIT. Use it, fork it, build a startup on it. We just ask: if you ship a feature 
 
 ### ⚠️ Redistribution notice — bundled binaries are not all MIT
 
-**Wind Comic's own source is MIT.** But three npm dependencies ship pre-built binaries under copyleft licenses. This does **not** affect the MIT status of this repository, and it does not affect you if you simply run or fork the source. It **does** matter the moment you redistribute a bundle that embeds those binaries (a Docker image, a desktop build, a hosted appliance you hand to a customer):
+**Eight-Horses source is MIT.** But three npm dependencies ship pre-built binaries under copyleft licenses. This does **not** affect the MIT status of this repository, and it does not affect you if you simply run or fork the source. It **does** matter the moment you redistribute a bundle that embeds those binaries (a Docker image, a desktop build, a hosted appliance you hand to a customer):
 
 | Dependency | License | What you must do when redistributing a bundle |
 |---|---|---|
@@ -467,13 +488,13 @@ MIT. Use it, fork it, build a startup on it. We just ask: if you ship a feature 
 | `lightningcss` (+ platform binaries) | MPL-2.0 | File-level weak copyleft. Unmodified use/redistribution carries no extra duty; only if you modify its MPL-licensed files must you publish those files. |
 | `@img/sharp-libvips-*` | LGPL-3.0-or-later | Dynamic linking does not infect your code. On redistribution you must let end users replace/relink the library and point them to its source. |
 
-CI enforces this: [`scripts/license-check.mjs`](https://github.com/ChrisChen667788/wind-comic/blob/main/scripts/license-check.mjs) scans the **production** dependency tree every run and **fails the build** if a copyleft dependency appears that is not registered in the table above — so a new GPL dependency can never slip in unnoticed.
+CI enforces this: [`scripts/license-check.mjs`](https://github.com/kts-kris/eight-horses/blob/main/scripts/license-check.mjs) scans the **production** dependency tree every run and **fails the build** if a copyleft dependency appears that is not registered in the table above — so a new GPL dependency can never slip in unnoticed.
 
 ---
 
 ## 🙏 Acknowledgements
 
-Wind Comic stands on a lot of excellent open-source work:
+Eight-Horses stands on a lot of excellent open-source work:
 
 - **App & UI** — [Next.js](https://nextjs.org) (App Router + Turbopack) · [React 19](https://react.dev) · [Tailwind CSS v4](https://tailwindcss.com) · [Radix UI](https://www.radix-ui.com) · [Phosphor Icons](https://phosphoricons.com) + [Lucide](https://lucide.dev) · [Framer Motion](https://www.framer.com/motion/) · [React Flow](https://reactflow.dev) for the agent-workflow DAG
 - **Realtime & data** — [Yjs](https://github.com/yjs/yjs) + [y-websocket](https://github.com/yjs/y-websocket) for **CRDT** real-time collaboration · [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) + [node-postgres](https://node-postgres.com) for the dual-driver persistence layer
@@ -496,13 +517,13 @@ Found something? Issues and PRs are genuinely read — several of the pipeline's
 
 ## ⭐ Star History
 
-If Wind Comic saved you time, a star helps other creators find it.
+If Eight-Horses saved you time, a star helps other creators find it.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ChrisChen667788/wind-comic&type=Date)](https://star-history.com/#ChrisChen667788/wind-comic&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kts-kris/eight-horses&type=Date)](https://star-history.com/#kts-kris/eight-horses&Date)
 
 ---
 
 <p align="center">
   Built with ❤️ by people who believe AI-generated drama should feel like a show, not a tech demo.<br/>
-  <a href="https://github.com/ChrisChen667788/wind-comic/stargazers">⭐ Star us</a> if Wind Comic saved you a week.
+  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star us</a> if Eight-Horses saved you a week.
 </p>

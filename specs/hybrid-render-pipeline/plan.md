@@ -172,7 +172,7 @@ provenance, so no new table is required.
 | Source edited during final work | Medium | High | Compare-and-swap on source asset version before replacement |
 | 4K composition CPU/disk pressure | Medium | High | One composition per job, persistent output, explicit 2160p setting, cleanup temporary files |
 | Recomposition fails after paid shots | Low | High | Preserve shot assets, mark partial, retry composition without regenerating shots |
-| Worker output URL expires | Medium | High | Persist every successful shot into Wind Comic storage before asset replacement |
+| Worker output URL expires | Medium | High | Persist every successful shot into Eight-Horses storage before asset replacement |
 
 ## Out of Scope (Technical)
 

@@ -191,9 +191,9 @@
 
 ### B.4 片头 / 片尾自动生成 ✅ 2026-04-26
 - [x] `services/intro-outro.ts` 新增 `generateIntroOutro()` + `buildIntroFilters()` + `buildOutroFilters()` + 转义 helper
-- [x] intro 1.5s:封面图(scale+crop+drawbox 暗化)+ 标题 0.6s 淡入 + "by Wind Comic" 副标 0.4-1.0s 淡入
+- [x] intro 1.5s:封面图(scale+crop+drawbox 暗化)+ 标题 0.6s 淡入 + "by Eight-Horses" 副标 0.4-1.0s 淡入
 - [x] intro 无封面时退到纯黑 color 源
-- [x] outro 2.0s:"Made by Wind Comic" 主标 + 项目标题淡入 + 角色 roster(最多 6 人,平移淡入)
+- [x] outro 2.0s:"Made by Eight-Horses" 主标 + 项目标题淡入 + 角色 roster(最多 6 人,平移淡入)
 - [x] 决策常量:`INTRO_DURATION_S=1.5` / `OUTRO_DURATION_S=2.0` / `INTRO_OUTRO_RESOLUTION=1920x1080`
 - [x] 输出 [vout]+[aout] 标签,supplyable 直接进 composer 的 concat 列表
 - [x] tests/intro-outro.test.ts(12 条):cover/no-cover 分支 / brand+title+roster / roster cap / 转义 / 自定义 font+duration / 决策常量

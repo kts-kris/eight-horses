@@ -141,7 +141,7 @@
 
 ### 📷 17. Side-by-side 对比 GIF
 - 一边: Sora-风 prompt 只出 5 秒粗糙片段
-- 另一边: Wind Comic 出 30 秒带字幕带配音的精修
+- 另一边: Eight-Horses 出 30 秒带字幕带配音的精修
 - **文件**: `comparison-vs-sora.gif`
 
 ### 📷 18. Pipeline 流程动画

@@ -1,4 +1,4 @@
-# Wind Comic 🌬️ · English Marketing Copy
+# Eight-Horses 🐎 · English Marketing Copy
 
 > Ready-to-paste copy for Twitter / Product Hunt / HN / Reddit / LinkedIn / Devto / ModelScope / HuggingFace profile.
 > One snippet per channel, sized to fit.
@@ -14,7 +14,7 @@
 
 ## 🔥 Twitter / X — 280 chars
 
-> 🌬️ Wind Comic v12.263 is live.
+> 🐎 Eight-Horses v12.263 is live.
 >
 > ▸ 1 sentence → full short drama
 > ▸ 8-agent pipeline (Sora is 1)
@@ -24,7 +24,7 @@
 > ▸ Bring your own LLM
 > ▸ MIT · 3527 tests
 >
-> github.com/ChrisChen667788/wind-comic
+> github.com/kts-kris/eight-horses
 
 ---
 
@@ -34,7 +34,7 @@
 > Open-source 1-line → full short drama AI
 
 **Description:**
-> Wind Comic is the first **honest multi-agent AI pipeline** for short-form drama. Instead of one black-box model, 8 specialists pass off with strict contracts: Writer → Director → Style Bible → Character Designer → Storyboard (with Vision audit) → Video → Editor.
+> Eight-Horses is the first **honest multi-agent AI pipeline** for short-form drama. Instead of one black-box model, 8 specialists pass off with strict contracts: Writer → Director → Style Bible → Character Designer → Storyboard (with Vision audit) → Video → Editor.
 >
 > What competitors don't have:
 > - **Style Bible Frame** — one canonical key-art locks all 6 shots to the same look (vs. Sora's 2-frame rolling chain that drifts)
@@ -50,11 +50,11 @@
 
 ## 🔥 Hacker News — "Show HN" title
 
-> Show HN: Wind Comic – Open-source multi-agent AI turns one sentence into a finished short drama
+> Show HN: Eight-Horses – Open-source multi-agent AI turns one sentence into a finished short drama
 
 **First comment (background):**
 
-> Author here. After watching every "AI video" tool give us 5-second clips when we actually wanted a short film, I built Wind Comic as a multi-agent pipeline.
+> Author here. After watching every "AI video" tool give us 5-second clips when we actually wanted a short film, I built Eight-Horses as a multi-agent pipeline.
 >
 > Key non-obvious technical choices:
 >
@@ -70,7 +70,7 @@
 >
 > 8 months, v2.0 → v12.263, 3527 vitest tests, TypeScript strict, MIT. Honestly happy for criticism — `docs/COMPETITIVE-GAP-2026-05.md` is our own self-audit of where we still lose vs Sora/Kling/Higgsfield.
 >
-> github.com/ChrisChen667788/wind-comic
+> github.com/kts-kris/eight-horses
 
 ---
 
@@ -81,7 +81,7 @@
 
 **Body:**
 
-I'm sharing **Wind Comic** — an open-source alternative to Sora-style "one giant model" approaches. The core idea: short-form drama needs multiple specialized agents handing off with explicit consistency contracts, not one model trying to do everything.
+I'm sharing **Eight-Horses** — an open-source alternative to Sora-style "one giant model" approaches. The core idea: short-form drama needs multiple specialized agents handing off with explicit consistency contracts, not one model trying to do everything.
 
 The 8 agents:
 1. **Director** — story plan, character roles, style keywords
@@ -101,7 +101,7 @@ Tech: Next.js 16 + TypeScript strict + SQLite + Web Audio API + Yjs. 3527 vitest
 
 Honest competitor comparison: README's vs-competitors table is kept current (verified 2026-07-24: on the blind Artificial Analysis arena, **Google's Gemini Omni Flash now tops both boards** — text-to-video-with-audio at Elo 1245 and image-to-video at 1200 — on a unified text/image/audio/video architecture with conversational video editing; Dreamina Seedance 2.0 720p is #2 on both; Kling 3.0 is the value champion (~$0.50/clip, best for short-form drama); Veo 3.1 stays the quality/physics/4K enterprise pick; Sora 2 is shutting down — app offline 2026-04-26, API ending 2026-09-24 — removed. **We ride the wave via BYO**: since v12.238, `GEMINI_API_KEY` enables the Gemini image provider (Nano Banana) in-pipeline — a leaderboard-topping rival becomes an engine *we* orchestrate). `docs/COMPETITIVE-GAP-2026-05.md` is a dated self-audit.
 
-GitHub: https://github.com/ChrisChen667788/wind-comic
+GitHub: https://github.com/kts-kris/eight-horses
 
 ---
 
@@ -111,7 +111,7 @@ GitHub: https://github.com/ChrisChen667788/wind-comic
 >
 > Today we're open-sourcing the answer.
 >
-> **Wind Comic** is a multi-agent AI pipeline:
+> **Eight-Horses** is a multi-agent AI pipeline:
 > ▸ 1 sentence → finished short drama (script + characters + storyboard + video + voiceover + BGM + subtitles)
 > ▸ Character consistency via cref + sref + 8-dim DNA + Vision retry
 > ▸ Style coherence via Style Bible Frame
@@ -122,7 +122,7 @@ GitHub: https://github.com/ChrisChen667788/wind-comic
 >
 > If you're a vertical-drama studio, content marketing team, indie filmmaker, or comic adaptation studio — give it 10 minutes.
 >
-> github.com/ChrisChen667788/wind-comic
+> github.com/kts-kris/eight-horses
 >
 > #AIvideo #OpenSource #ContentMarketing #FilmTech #ChineseTech
 
@@ -144,7 +144,7 @@ We took the opposite approach: 8 specialized agents, each an expert at their rol
 
 ## 🔥 HuggingFace Space / Spaces card
 
-> # 🌬️ Wind Comic
+> # 🐎 Eight-Horses
 >
 > Open-source multi-agent AI pipeline that turns one sentence into a finished short-form drama. Built for vertical drama, comic adaptation, content marketing, and indie filmmaking.
 >
@@ -152,7 +152,7 @@ We took the opposite approach: 8 specialized agents, each an expert at their rol
 >
 > MIT · Next.js 16 · TypeScript · 3527 tests passing
 >
-> Source: github.com/ChrisChen667788/wind-comic
+> Source: github.com/kts-kris/eight-horses
 
 ---
 

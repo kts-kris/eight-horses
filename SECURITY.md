@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Wind Comic is currently in active development. Security fixes land on `main` and the most recent tagged release.
+Eight-Horses is currently in active development. Security fixes land on `main` and the most recent tagged release.
 
 | Version | Supported          |
 | ------- | ------------------ |

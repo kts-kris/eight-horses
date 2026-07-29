@@ -6,7 +6,7 @@ Last updated: 2026-07-28
 
 ## Overview
 
-Wind Comic will generate an inexpensive, fully playable 720p review film with an
+Eight-Horses will generate an inexpensive, fully playable 720p review film with an
 open-weight video model, then let an editor submit the approved film once for a
 durable, shot-by-shot, closed-model 4K final rerender. The final path preserves the
 approved story, timing, voiceover, subtitles, music, references, and edit structure.
@@ -74,7 +74,7 @@ reason, and no paid provider is called as a fallback.
 
 Given all preview shots and the project's deterministic media assets are available
 When preview composition completes
-Then Wind Comic produces one playable review MP4 in the project aspect ratio with the
+Then Eight-Horses produces one playable review MP4 in the project aspect ratio with the
 approved shot order, full timeline, supplied or generated voiceover, music when
 configured, and deterministic Chinese subtitles.
 
@@ -166,7 +166,7 @@ surfaces the existing comparison or film-health entry points for editorial revie
 
 Given an authorized Linux NVIDIA GPU host already runs a supported video backend
 When an operator deploys the supplied worker package and configures its URL and token
-Then Wind Comic can use the worker without cloud-vendor-specific application code.
+Then Eight-Horses can use the worker without cloud-vendor-specific application code.
 
 ### AC-16: Automatic cloud purchasing [WONT]
 

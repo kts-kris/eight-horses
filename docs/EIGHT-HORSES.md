@@ -1,8 +1,8 @@
-# Eight Horses 改造说明
+# Eight-Horses 改造说明
 
 ## 项目定位
 
-Eight Horses 是 Wind Comic 的独立衍生版本，目标不是替换原有多 Agent
+Eight-Horses 是下述上游项目的独立衍生版本，目标不是替换原有多 Agent
 短剧生产能力，而是补齐一条更适合实际采购和制作的双档渲染路径：
 
 1. 使用低成本 GPU 和开源模型快速产出完整 720p 审片样片。
@@ -14,7 +14,7 @@ Eight Horses 是 Wind Comic 的独立衍生版本，目标不是替换原有多 
 本分支基于上游提交 `ef473fcd7e2cb4b51438005d4d1361e904a7cd69`，
 并保留其 MIT 许可证和原作者版权声明。
 
-## Eight Horses 新增能力
+## Eight-Horses 新增能力
 
 ### 低成本开源样片
 
@@ -76,7 +76,7 @@ Worker 的部署步骤、模型模板和预检命令见
 
 ## 验证基线
 
-Eight Horses 首次发布前已完成：
+Eight-Horses 首次发布前已完成：
 
 - 426 个 Vitest 测试文件，3527 项测试全部通过；
 - 7 项 Python Worker 测试全部通过；
@@ -88,5 +88,5 @@ Eight Horses 首次发布前已完成：
 ## 当前云端状态
 
 代码和部署包已经就绪，但任何具体腾讯 HAI 实例的启动、模型下载和真实视频
-生成仍需要实例所有者登录腾讯云后执行。Eight Horses 不包含云账号凭据，也不会
+生成仍需要实例所有者登录腾讯云后执行。Eight-Horses 不包含云账号凭据，也不会
 绕过登录或自动创建新的付费 GPU 资源。

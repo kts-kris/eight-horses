@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Wind Comic are documented here.
+All notable changes to Eight-Horses are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -40,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.12.0] — 2026-04-26 — Initial public release
 
-First open-source release of Wind Comic. Wraps a year of internal development on a multi-agent AI pipeline that turns a one-line idea into a finished short-form drama.
+First open-source release of the upstream codebase that Eight-Horses derives from. Wraps a year of internal development on a multi-agent AI pipeline that turns a one-line idea into a finished short-form drama.
 
 ### Added
 - **Cameo Vision Auto-Retry** — character face consistency below score 75 triggers automatic retry with progressive reference boost (`services/cameo-retry.ts`, 17 unit tests)
@@ -85,4 +85,4 @@ See [ROADMAP.md](ROADMAP.md) for the full plan.
 
 ## Pre-release internal development (not publicly distributed)
 
-Wind Comic was developed privately from 2026-03-22 through 2026-04-25 before this open-source release. Major internal milestones (v0.1 → v2.11) are not separately tagged in the public repository — `v2.12.0` is the first version with a public commit history.
+The upstream codebase was developed privately from 2026-03-22 through 2026-04-25 before this open-source release. Major internal milestones (v0.1 → v2.11) are not separately tagged in the public repository — `v2.12.0` is the first version with a public commit history.

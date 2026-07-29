@@ -1,11 +1,11 @@
-# Wind Comic Project Constitution
+# Eight-Horses Project Constitution
 
 Version: 1.0.0
 Last updated: 2026-07-28
 
 ## Purpose
 
-Wind Comic turns a creative brief into an editable, traceable, finished video. New
+Eight-Horses turns a creative brief into an editable, traceable, finished video. New
 features must preserve the complete production chain: project-owned source assets,
 durable generation jobs, reviewable intermediate results, and an honestly labelled
 final export.

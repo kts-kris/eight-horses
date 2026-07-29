@@ -16,7 +16,7 @@ following assumptions make that authorization concrete.
 ## 2. Data ownership
 
 - Scripts, storyboards, reference images, prompts, audio, subtitles, preview clips,
-  final clips, and job records belong to the Wind Comic project.
+  final clips, and job records belong to the Eight-Horses project.
 - A final-render job uses a frozen snapshot of the project revision that was approved
   when the job was submitted.
 - Completed final clips are versioned replacements; the source preview URL and source

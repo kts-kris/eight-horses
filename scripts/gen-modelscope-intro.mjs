@@ -20,7 +20,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const REPO = 'ChrisChen667788/wind-comic';
+const REPO = 'kts-kris/eight-horses';
 const RAW = `https://raw.githubusercontent.com/${REPO}/main`;
 const BLOB = `https://github.com/${REPO}/blob/main`;
 

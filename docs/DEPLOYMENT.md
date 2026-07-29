@@ -493,7 +493,7 @@ fallbackApiKey  = LLM_FALLBACK_API_KEY || MINIMAX_API_KEY
 | 变量名 | 必填/可选 | 默认值 | 一句话作用 |
 |---|---|---|---|
 | `EMAIL_PROVIDER` | 可选 | `resend` | 邮件服务商：`resend` 或 `sendgrid` |
-| `EMAIL_FROM` | 可选 | `Wind Comic <noreply@windcomic.app>` | 发件人地址 |
+| `EMAIL_FROM` | 可选 | `Eight-Horses <noreply@windcomic.app>` | 发件人地址 |
 | `EMAIL_DISABLED` | 可选 | — | `1` 全局禁用邮件发送 |
 | `RESEND_API_KEY` | 条件必填 | — | Resend 发送密钥（`EMAIL_PROVIDER=resend` 时需要） |
 | `SENDGRID_API_KEY` | 条件必填 | — | SendGrid 发送密钥（`EMAIL_PROVIDER=sendgrid` 时需要） |

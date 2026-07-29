@@ -27,12 +27,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4">
+  <a href="https://github.com/kts-kris/eight-horses/raw/main/assets/promo/wind-comic-promo-en.mp4">
     <img src="assets/promo/wind-comic-promo.gif" alt="Eight-Horses — 39-second promo (click to watch with voiceover &amp; sound)" width="100%" />
   </a>
 </p>
 <p align="center">
-  ▶ <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4"><b>Watch the full 39-second promo — with voiceover &amp; sound</b></a><br/>
+  ▶ <a href="https://github.com/kts-kris/eight-horses/raw/main/assets/promo/wind-comic-promo-en.mp4"><b>Watch the full 39-second promo — with voiceover &amp; sound</b></a><br/>
   <sub>Real cinematic footage woven with motion-graphics · 8 distinct art styles · English narration · scored by the platform's own MiniMax music engine.</sub>
 </p>
 

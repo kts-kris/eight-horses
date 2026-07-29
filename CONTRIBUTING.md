@@ -1,12 +1,12 @@
-# Contributing to Wind Comic
+# Contributing to Eight-Horses
 
-Thanks for thinking about contributing! Wind Comic is a multi-agent AI pipeline for short-form drama production — script → storyboards → video, with built-in character consistency. Contributions of all sizes are welcome.
+Thanks for thinking about contributing! Eight-Horses is a multi-agent AI pipeline for short-form drama production — script → storyboards → video, with built-in character consistency. Contributions of all sizes are welcome.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/ChrisChen667788/wind-comic.git
-cd wind-comic
+git clone https://github.com/kts-kris/eight-horses.git
+cd eight-horses
 npm install
 cp .env.example .env.local        # fill in your AI provider keys
 npm run dev                       # http://localhost:3000
@@ -71,7 +71,7 @@ A few conventions keep the multi-agent pipeline maintainable. Follow them and yo
 
 ## Adding a new AI provider
 
-Wind Comic abstracts each provider behind a service module in `services/`. To add one:
+Eight-Horses abstracts each provider behind a service module in `services/`. To add one:
 
 1. Create `services/<provider>.service.ts` exporting an async function with the same signature as siblings (e.g., `generateImage(prompt, opts)` → `Promise<string>`)
 2. Wire it into [`services/hybrid-orchestrator.ts`](services/hybrid-orchestrator.ts)'s router as a fallback in the appropriate chain (image / video / TTS)
@@ -81,7 +81,7 @@ Wind Comic abstracts each provider behind a service module in `services/`. To ad
 
 ## Running marketing/asset scripts
 
-Wind Comic ships with image-generation scripts under `scripts/` for marketing assets (banner, OG card, demo). They require a working `QINGYUNTOP_API_KEY` (or `OPENAI_API_KEY` against any OpenAI-compatible image endpoint). See `scripts/generate-marketing-assets.mjs` for the canonical example.
+Eight-Horses ships with image-generation scripts under `scripts/` for marketing assets (banner, OG card, demo). They require a working `QINGYUNTOP_API_KEY` (or `OPENAI_API_KEY` against any OpenAI-compatible image endpoint). See `scripts/generate-marketing-assets.mjs` for the canonical example.
 
 ## Licensing
 

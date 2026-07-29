@@ -94,13 +94,13 @@ function ask(rl, q) {
 const STEPS = [
   {
     title: '步骤 1/8 · 项目名 (Studio 名 / Project Name)',
-    body: 'Wind Comic 🌬️ — 多 Agent AI 漫剧流水线',
+    body: 'Eight-Horses 🐎 — 多 Agent AI 漫剧流水线',
     instruction: '复制后, 浏览器 → ModelScope 个人主页 → 我创建的 → 创建 Studio/作品 → 名字框 cmd+V',
     autoUrl: flagOpen ? MODELSCOPE_CREATE_STUDIO_URL : null,
   },
   {
     title: '步骤 2/8 · Studio 简介 (Bio · 200 字以内)',
-    sectionMatch: (s) => s.title === '中文版' && s.body.some((l) => l.includes('Wind Comic 🌬️')),
+    sectionMatch: (s) => s.title === '中文版' && s.body.some((l) => l.includes('Eight-Horses 🐎')),
     instruction: '在"作品介绍"或"简介"字段粘贴',
   },
   {
@@ -121,7 +121,7 @@ const STEPS = [
   },
   {
     title: '步骤 4/8 · 项目卡 - Top 10 亮点 (英文 sub-section, 给国际访客看)',
-    sectionMatch: (s) => /Wind Comic v3\.1\.3 \. English card/.test(s.title) || s.title === 'Wind Comic v3.1.3 · English card',
+    sectionMatch: (s) => /Eight-Horses v3\.1\.3 \. English card/.test(s.title) || s.title === 'Eight-Horses v3.1.3 · English card',
     instruction: '如果 ModelScope 支持双语 description, 切到 English tab 粘 (可选)',
   },
   {
@@ -136,7 +136,7 @@ const STEPS = [
   },
   {
     title: '步骤 7/8 · 仓库链接',
-    body: 'https://github.com/ChrisChen667788/wind-comic',
+    body: 'https://github.com/kts-kris/eight-horses',
     instruction: '粘贴到 GitHub 字段 / 项目主页字段',
   },
   {

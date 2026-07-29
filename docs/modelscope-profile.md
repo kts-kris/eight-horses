@@ -10,11 +10,11 @@
 
 ## 〇. v6 产品介绍页 (ModelScope「介绍」可直接粘贴 · 图片走 GitHub raw 绝对链)
 
-> **Wind Comic 🌬️ 风之漫剧 —— 一句话进,整片短剧出。**
+> **Eight-Horses 🐎 八骏 —— 一句话进,整片短剧出。**
 > 不是再给你一个 5 秒片段,而是一条**诚实的多 Agent 流水线** + 一个**生产级创作工作室**:剧本 → 角色 → 分镜 → 配音 → 多轨时间线 → 成片 mp4,全部从同一句创意开始。MIT 开源,**1711 单测全过**,所有功能都在 `main` 里跑得起来,不是 PPT。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/wind-comic-v6-tour.gif" alt="Wind Comic v6 巡览" width="100%" />
+  <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/wind-comic-v6-tour.gif" alt="Eight-Horses v6 巡览" width="100%" />
 </p>
 
 **v6 把它从「能跑的 demo」做成了「能用的工作室」——**
@@ -29,21 +29,21 @@
 
 <table>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/director-console.png" /><br/><sub>🎬 导演级控片台 —— 整部片一个控制室</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/story-intake.png" /><br/><sub>📖 长篇小说 → 整季分集 + 叙事模式</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/director-console.png" /><br/><sub>🎬 导演级控片台 —— 整部片一个控制室</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/story-intake.png" /><br/><sub>📖 长篇小说 → 整季分集 + 叙事模式</sub></td>
 </tr>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/styles.png" /><br/><sub>🎨 风格画廊 —— 60 套电影质感一键套用</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v6/health.png" /><br/><sub>🩺 API 健康看板 —— 别再被死 key 打断</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/styles.png" /><br/><sub>🎨 风格画廊 —— 60 套电影质感一键套用</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v6/health.png" /><br/><sub>🩺 API 健康看板 —— 别再被死 key 打断</sub></td>
 </tr>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/polish-pro-audit.png" /><br/><sub>🩺 剧本润色 Pro —— deepseek-v4-pro 出稿 + AIGC 就绪度 / Save the Cat / Cameo 锚点 行业级体检 (v7.1)</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/character-studio.png" /><br/><sub>👤 角色工坊 —— 三视图 + DNA 锁脸 + Cameo IP 跨项目复用 (v6.0 / v7.x)</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/polish-pro-audit.png" /><br/><sub>🩺 剧本润色 Pro —— deepseek-v4-pro 出稿 + AIGC 就绪度 / Save the Cat / Cameo 锚点 行业级体检 (v7.1)</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/character-studio.png" /><br/><sub>👤 角色工坊 —— 三视图 + DNA 锁脸 + Cameo IP 跨项目复用 (v6.0 / v7.x)</sub></td>
 </tr>
 </table>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/final-film-control.png" alt="Finished film + 11-tab director station" width="100%" />
+  <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/final-film-control.png" alt="Finished film + 11-tab director station" width="100%" />
   <br/><sub>🎬 一个项目, 11 tab 驾驶舱:导演台 · 剧本 · 角色 · 场景 · 分镜 · 连贯性 · 视频 · 镜头工坊 · 时间线 · 节奏 · 质检 · 技术监看 · 参数联动 · 评论 · 完整播放 (v8.0)</sub>
 </p>
 
@@ -51,12 +51,12 @@
 
 <table>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/dashboard-bento.png" /><br/><sub>非对称 bento 创作总览</sub></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/style-gallery.png" /><br/><sub>60 风格画廊, 每张 AI 生成</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/dashboard-bento.png" /><br/><sub>非对称 bento 创作总览</sub></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/style-gallery.png" /><br/><sub>60 风格画廊, 每张 AI 生成</sub></td>
 </tr>
 </table>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChrisChen667788/wind-comic/main/assets/v8/template-icons.png" width="100%" />
+  <img src="https://raw.githubusercontent.com/kts-kris/eight-horses/main/assets/v8/template-icons.png" width="100%" />
   <br/><sub>🎭 故事模板库 —— 18 枚统一风格 AI 金色霓虹题材图标 (告别默认 emoji)</sub>
 </p>
 
@@ -76,7 +76,7 @@
 
 ### English
 
-> **Wind Comic 🌬️ — one sentence in, a finished short-form drama out.**
+> **Eight-Horses 🐎 — one sentence in, a finished short-form drama out.**
 > Not another 5-second clip — an **honest multi-agent pipeline** + a **production-grade studio**: script → cast → storyboards → voiceover → multi-track timeline → final mp4, all from one idea. MIT open-source, **1711 tests passing**, every feature live in `main` (no slideware).
 
 **v6 turned it from a runnable demo into a usable studio —**
@@ -91,7 +91,7 @@
 
 > Stack: Next.js 16 + React 19 + Tailwind v4 · SQLite/Postgres dual-driver · Yjs realtime collab · 4-language i18n · built-in API health board · 1711 tests passing
 
-> 🔗 GitHub (full code + docs + screenshots): **github.com/ChrisChen667788/wind-comic** · 🪪 MIT · ⭐ Star it if it helps
+> 🔗 GitHub (full code + docs + screenshots): **github.com/kts-kris/eight-horses** · 🪪 MIT · ⭐ Star it if it helps
 
 ---
 
@@ -99,22 +99,22 @@
 
 ### 中文版
 
-> **Wind Comic 🌬️ — 开源多 Agent AI 漫剧 / 短剧流水线作者**
+> **Eight-Horses 🐎 — 开源多 Agent AI 漫剧 / 短剧流水线作者**
 >
 > 一句 idea, 8 个 agent, 一部完整短剧. 锁脸 + 锁画风 + 中文字幕真烧入 + Logic Pro 风时间线 + 实时多人协作 + 接你自己的 LLM. MIT 开源, 1711 单测全过.
 >
-> 🔗 GitHub: github.com/ChrisChen667788/wind-comic
+> 🔗 GitHub: github.com/kts-kris/eight-horses
 > 🎬 适合: 竖屏短剧创作者 · 内容营销团队 · 漫画/漫剧工作室 · 独立电影人 · AI 开源开发者
 >
 > 持续迭代中, 已发布到 v7.0.
 
 ### English version
 
-> **Wind Comic 🌬️ — Author of the open-source multi-agent AI short-drama pipeline**
+> **Eight-Horses 🐎 — Author of the open-source multi-agent AI short-drama pipeline**
 >
 > One sentence in. Finished short drama out. 8-agent pipeline · character DNA lock · style bible · real CJK subtitles · Logic Pro-style timeline · real-time multiplayer · BYO LLM. MIT licensed. 1711 tests passing.
 >
-> 🔗 GitHub: github.com/ChrisChen667788/wind-comic
+> 🔗 GitHub: github.com/kts-kris/eight-horses
 > 🎬 Built for: vertical-drama creators · content marketing teams · comic/manhua studios · indie filmmakers · open-source builders
 >
 > Current release: v7.0 (continuously shipping).
@@ -123,15 +123,15 @@
 
 ## 二. 项目卡 (适合作为"作品"或"模型"卡的描述)
 
-### Wind Comic v3.1.3 · 中文卡
+### Eight-Horses v3.1.3 · 中文卡
 
 ```
-项目名: Wind Comic 🌬️
+项目名: Eight-Horses 🐎
 版本: v3.1.3 (2026-05-18)
 类型: 开源 AI 应用 · 多 Agent 流水线
 赛道: 文生短剧 / 竖屏漫剧 / Cinema 协作
 许可: MIT
-仓库: github.com/ChrisChen667788/wind-comic
+仓库: github.com/kts-kris/eight-horses
 ```
 
 **一句话**: 一句话进, 整部短剧出.
@@ -177,15 +177,15 @@
 - 完整 changelog 见 ROADMAP.md
 - 自己写了 docs/COMPETITIVE-GAP.md 客观对照差距 (我们坦白哪里还输)
 
-### Wind Comic v3.1.3 · English card
+### Eight-Horses v3.1.3 · English card
 
 ```
-Name: Wind Comic 🌬️
+Name: Eight-Horses 🐎
 Release: v3.1.3 (2026-05-18)
 Type: Open-source AI app · Multi-agent pipeline
 Domain: Text-to-short-drama · Vertical comic · Cinema collaboration
 License: MIT
-Repo: github.com/ChrisChen667788/wind-comic
+Repo: github.com/kts-kris/eight-horses
 ```
 
 **One-liner**: One sentence in. One finished short drama out.
@@ -214,7 +214,7 @@ Repo: github.com/ChrisChen667788/wind-comic
 
 ## 三. 模块/功能卡 (可作为单独"模型"上传卡 — 如果 ModelScope 允许应用类作品)
 
-每个模块都是 Wind Comic 的子能力, 可以单独 highlight:
+每个模块都是 Eight-Horses 的子能力, 可以单独 highlight:
 
 ### 卡 1: Style Bible Frame 🎨
 > 全片画风锁定方案. 渲染一张 canonical key-art 帧, 作为后续所有分镜的首位 --sref. 关掉 60% 的"6 镜画风不一致"问题. v2.20 落地, 集成在主流水线.
@@ -240,9 +240,9 @@ Repo: github.com/ChrisChen667788/wind-comic
 
 ### 中文
 
-> 🌬️ **Wind Comic v3.1.3 上线 — 1 句话出整片漫剧**
+> 🐎 **Eight-Horses v3.1.3 上线 — 1 句话出整片漫剧**
 >
-> 试一下: `git clone` https://github.com/ChrisChen667788/wind-comic && `npm install` && `npm run dev`
+> 试一下: `git clone` https://github.com/kts-kris/eight-horses && `npm install` && `npm run dev`
 >
 > 5 分钟看到第一部短剧.
 >
@@ -250,9 +250,9 @@ Repo: github.com/ChrisChen667788/wind-comic
 
 ### English
 
-> 🌬️ **Wind Comic v3.1.3 — One-sentence-to-short-drama, now open-source**
+> 🐎 **Eight-Horses v3.1.3 — One-sentence-to-short-drama, now open-source**
 >
-> Try it: `git clone github.com/ChrisChen667788/wind-comic && npm install && npm run dev`
+> Try it: `git clone github.com/kts-kris/eight-horses && npm install && npm run dev`
 >
 > See your first short drama in 5 minutes.
 >
@@ -264,9 +264,9 @@ Repo: github.com/ChrisChen667788/wind-comic
 
 ### 中文版
 
-**Wind Comic 是什么**
+**Eight-Horses 是什么**
 
-Wind Comic 是一条**开源的多 Agent AI 短剧生成流水线**. 一句创意 (例如"重生归来的霸总当街拆穿前未婚妻的婚礼骗局") 输入, 8 个 AI agent 各司其职逐步产出: 剧本 → 角色三视图 → 场景概念图 → 多镜分镜 → 视频成片 → 配音 + BGM + 中文字幕 → 最终 mp4. 全过程在你自己的机器上, 可选接 Minimax / Veo / Kling 等图像 / 视频引擎, LLM 端 OpenAI 兼容 (DeepSeek / Claude / 通义 / Kimi / 本地 Ollama 都行).
+Eight-Horses 是一条**开源的多 Agent AI 短剧生成流水线**. 一句创意 (例如"重生归来的霸总当街拆穿前未婚妻的婚礼骗局") 输入, 8 个 AI agent 各司其职逐步产出: 剧本 → 角色三视图 → 场景概念图 → 多镜分镜 → 视频成片 → 配音 + BGM + 中文字幕 → 最终 mp4. 全过程在你自己的机器上, 可选接 Minimax / Veo / Kling 等图像 / 视频引擎, LLM 端 OpenAI 兼容 (DeepSeek / Claude / 通义 / Kimi / 本地 Ollama 都行).
 
 **为什么不是又一个 "AI 视频" 工具**
 
@@ -278,7 +278,7 @@ Wind Comic 是一条**开源的多 Agent AI 短剧生成流水线**. 一句创�
 - 无法实时多人协作
 - 厂商锁定, 你的 prompt 喂别人的模型
 
-Wind Comic 走相反路线: **流水线 + 多 Agent + 严格契约**. 每个 agent 是专家, 用结构化数据 (而非随便的文本) 交接. 编剧只关心 McKee 三幕和短剧 trope; 角色师只关心三视图和 DNA 抽取; 分镜师只关心 vision 审计和画风一致性. 任何一环出问题, 我们都有"重生 / 兜底 / fallback"机制.
+Eight-Horses 走相反路线: **流水线 + 多 Agent + 严格契约**. 每个 agent 是专家, 用结构化数据 (而非随便的文本) 交接. 编剧只关心 McKee 三幕和短剧 trope; 角色师只关心三视图和 DNA 抽取; 分镜师只关心 vision 审计和画风一致性. 任何一环出问题, 我们都有"重生 / 兜底 / fallback"机制.
 
 **核心技术亮点**
 
@@ -303,7 +303,7 @@ Wind Comic 走相反路线: **流水线 + 多 Agent + 严格契约**. 每个 age
 
 **链接**
 
-- GitHub: https://github.com/ChrisChen667788/wind-comic
+- GitHub: https://github.com/kts-kris/eight-horses
 - ROADMAP: 完整 21 个 sprint changelog (v2.0 → v3.1.3)
 - LLM 接入文档: `docs/llm-providers.md`
 - 竞品对照: `docs/COMPETITIVE-GAP-2026-05.md`
@@ -312,9 +312,9 @@ Wind Comic 走相反路线: **流水线 + 多 Agent + 严格契约**. 每个 age
 
 ### English version
 
-**What is Wind Comic?**
+**What is Eight-Horses?**
 
-Wind Comic is an **open-source multi-agent AI pipeline for short-form drama generation**. Input one sentence (e.g. "A reborn CEO confronts his cheating ex-fiancée at her wedding"), 8 specialized AI agents pass off in sequence: script → character turnarounds → scene concept art → multi-shot storyboards → video → voiceover + BGM + Chinese subtitles → final mp4. Runs on your own machine. Plugs into optional providers (Minimax / Veo / Kling / etc.) for images and video. The LLM side is OpenAI-compatible (works with DeepSeek / Claude / Qwen / Kimi / local Ollama out of the box).
+Eight-Horses is an **open-source multi-agent AI pipeline for short-form drama generation**. Input one sentence (e.g. "A reborn CEO confronts his cheating ex-fiancée at her wedding"), 8 specialized AI agents pass off in sequence: script → character turnarounds → scene concept art → multi-shot storyboards → video → voiceover + BGM + Chinese subtitles → final mp4. Runs on your own machine. Plugs into optional providers (Minimax / Veo / Kling / etc.) for images and video. The LLM side is OpenAI-compatible (works with DeepSeek / Claude / Qwen / Kimi / local Ollama out of the box).
 
 **Why not just another "AI video" tool**
 
@@ -326,7 +326,7 @@ Mainstream tools (Sora, Kling, Vidu, Runway) are all "prompt-in, clip-out" black
 - No real-time multi-user editing
 - Vendor lock-in for the LLM
 
-Wind Comic takes the opposite approach: **pipeline + multi-agent + strict contracts**. Each agent is a specialist passing structured data (not free-form text) to the next. The Writer only thinks about McKee 3-act and short-drama tropes; the Character Designer only thinks about turnaround sheets and DNA extraction; the Storyboard Artist only thinks about vision audits and style coherence. Every stage has retry / fallback / regen built in.
+Eight-Horses takes the opposite approach: **pipeline + multi-agent + strict contracts**. Each agent is a specialist passing structured data (not free-form text) to the next. The Writer only thinks about McKee 3-act and short-drama tropes; the Character Designer only thinks about turnaround sheets and DNA extraction; the Storyboard Artist only thinks about vision audits and style coherence. Every stage has retry / fallback / regen built in.
 
 **Top technical highlights**
 
@@ -351,7 +351,7 @@ Wind Comic takes the opposite approach: **pipeline + multi-agent + strict contra
 
 **Links**
 
-- GitHub: https://github.com/ChrisChen667788/wind-comic
+- GitHub: https://github.com/kts-kris/eight-horses
 - ROADMAP: 21 sprints documented (v2.0 → v3.1.3)
 - LLM swap docs: `docs/llm-providers.md`
 - Competitive self-audit: `docs/COMPETITIVE-GAP-2026-05.md`
@@ -364,14 +364,14 @@ Wind Comic takes the opposite approach: **pipeline + multi-agent + strict contra
 
 | 字段 | 推荐填写 |
 |---|---|
-| **作品名** | Wind Comic 🌬️ — 多 Agent AI 漫剧流水线 |
+| **作品名** | Eight-Horses 🐎 — 多 Agent AI 漫剧流水线 |
 | **作品类型** | 开源应用 (Studio Application) |
 | **赛道标签** | 文生视频, 多 Agent, 短剧, 漫剧, Cinema, 协作工具 |
 | **技术标签** | Next.js, TypeScript, Yjs, Minimax, Kling, Veo, OpenAI-compatible, FFmpeg, Web Audio API |
 | **场景标签** | 短视频创作, 内容营销, 漫画改编, 独立电影, 自托管 |
 | **许可证** | MIT |
 | **价格** | 免费 / 开源 |
-| **代码仓库** | github.com/ChrisChen667788/wind-comic |
+| **代码仓库** | github.com/kts-kris/eight-horses |
 | **首屏 banner** | 用 `assets/banner.png` |
 | **演示视频** | (待录制 — 用项目实拍 + 流水线可视化) |
 | **特色截图** | 见 `docs/SCREENSHOTS.md` 清单 |

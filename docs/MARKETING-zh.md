@@ -1,4 +1,4 @@
-# Wind Comic 🌬️ · 中文营销文案合集
+# Eight-Horses 🐎 · 中文营销文案合集
 
 > 给社媒 / 公众号 / 小红书 / 知乎 / 即刻 / B 站 / 视频号 / 抖音 评论区 / 模型站 (ModelScope, HuggingFace) 直接复制粘贴.
 > 不同平台不同长度, 一篇拿一篇用.
@@ -8,20 +8,20 @@
 ## 🔥 一句话 (1 line)
 
 > **一句话, 出完整短剧 — 不是 5 秒 demo, 是上头 30 秒漫剧.**
-> Wind Comic — 开源多 Agent AI 流水线, 比 Sora 多 6 个 agent, 比 Kling 多一个时间线编辑器, 比 Higgsfield 开源.
+> Eight-Horses — 开源多 Agent AI 流水线, 比 Sora 多 6 个 agent, 比 Kling 多一个时间线编辑器, 比 Higgsfield 开源.
 
 ---
 
 ## 🔥 微博 / 小红书 短文案 (140 字)
 
-> 🌬️ **Wind Comic** 来了 — 一句话进, 整片短剧出.
+> 🐎 **Eight-Horses** 来了 — 一句话进, 整片短剧出.
 > ✅ 多 Agent 不是黑盒大模型
 > ✅ 锁脸三件套 + Vision 审计
 > ✅ 真 BGM 波形 + Logic Pro 风时间线
 > ✅ 实时多人协作 (Yjs)
 > ✅ 中文字幕真烧入 (告别鬼画符)
 > ✅ 接你自己的 LLM (3 行 env, 0 改代码)
-> ⭐ 开源 MIT, GitHub: ChrisChen667788/wind-comic
+> ⭐ 开源 MIT, GitHub: kts-kris/eight-horses
 
 ---
 
@@ -29,7 +29,7 @@
 
 **"我用一句话生成了一部完整的短剧, 然后跟 Sora 对了一遍 — 它给了 5 秒, 我们给了 30 秒 + 字幕 + BGM + 配音 + 真人嘴型对齐."**
 
-最近开源了 [Wind Comic](https://github.com/ChrisChen667788/wind-comic), 一条诚实的多 Agent AI 流水线, 不是"超大模型把全干了". 8 个 agent 各司其职:
+最近开源了 [Eight-Horses](https://github.com/kts-kris/eight-horses), 一条诚实的多 Agent AI 流水线, 不是"超大模型把全干了". 8 个 agent 各司其职:
 
 1. **编剧 (McKee + 12 种短剧 trope 模板)** — 一句 idea → 6 镜剧本, 第 1 镜必上钩
 2. **导演** — 拆角色 / 场景 / 视觉风格
@@ -40,7 +40,7 @@
 7. **视频制片** — 多引擎竞速 (Minimax / Veo / Kling)
 8. **剪辑师** — j-cut / l-cut 按情绪节奏切, BGM 按幕分段, **真中文字幕 ffmpeg 烧入**
 
-为什么这套思路赢: 你单走任何一家 (Sora / Kling / Vidu / Runway) 都会卡在"6 镜画风不一致 / 角色变脸 / 中文字幕变鬼画符 / 没节奏感". Wind Comic 给每一个问题都加了一层"显式契约":
+为什么这套思路赢: 你单走任何一家 (Sora / Kling / Vidu / Runway) 都会卡在"6 镜画风不一致 / 角色变脸 / 中文字幕变鬼画符 / 没节奏感". Eight-Horses 给每一个问题都加了一层"显式契约":
 
 - 角色一致性: cref + sref + DNA + Cameo retry 四重锁
 - 画风一致性: Style Bible 帧固定首位 sref
@@ -53,13 +53,13 @@
 
 3527 个单测全过 / TypeScript 严格模式 / MIT 开源.
 
-GitHub: https://github.com/ChrisChen667788/wind-comic
+GitHub: https://github.com/kts-kris/eight-horses
 
 ---
 
 ## 🔥 公众号长文 (1500 字)
 
-# Wind Comic: 我开源了一个"一句话出整片短剧"的 AI 流水线 — 比 Sora 多 6 个 agent
+# Eight-Horses: 我开源了一个"一句话出整片短剧"的 AI 流水线 — 比 Sora 多 6 个 agent
 
 ## 缘起
 
@@ -68,12 +68,12 @@ GitHub: https://github.com/ChrisChen667788/wind-comic
 > 阵容核验 2026-07-24:盲投竞技场(Artificial Analysis)**谷歌 Gemini Omni Flash 登顶双榜** —— 带音频文生视频 Elo 1245、图生视频 1200(统一 text/image/audio/video 多模态 + 对话式视频编辑);Seedance 2.0 720p 双榜次席、Kling 3.0 性价比冠军(~$0.50/clip 短剧首选)、Veo 3.1 画质/物理/4K 企业安全牌、HappyHorse-1.1 前列。**⭐ 我方 BYO 已可接住这波**:v12.238 起填 GEMINI_API_KEY 即启用 Gemini 图像(Nano Banana),竞品登顶反成本管线可调度引擎。
 - **Gemini Omni Flash(谷歌)** 双榜登顶:统一多模态一次出音画、对话式迭代改片;**Seedance 2.0(字节)** 音画联合、API 已商用(百炼/fal,配 FAL_KEY 可 BYO);**Kling 3.0(快手)** 性价比冠军、原生故事板多镜 + 跨镜音画同步.
 - **Veo 3.1** 仍是画质/物理一致性 + 4K + 原生对白音轨的企业安全牌;**Runway Gen-4.5** 工业级控制面(运动笔刷 + GWM-1 世界模型)—— 但它们**都不烧中文字幕、不开源、不能自托管、没多人协作时间线**,单段/单流程为主.
-- (Sora 2 已停服:App 2026-04-26 / API 2026-09-24,移出对比;HappyHorse-1.0 阿里 4 月匿名登顶后退居前列.)**结论不变:生成层是红海,Wind Comic 护城河在「制作/平台层」—— 节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO 当下最强引擎.**
-- 共同缺口 (= Wind Comic 的护城河): 真·中文字幕烧入 · 竖屏短剧套路 · 自托管 · 自带 LLM · 开源 · 实时协作 · 节奏审计 · 智能剪辑.
+- (Sora 2 已停服:App 2026-04-26 / API 2026-09-24,移出对比;HappyHorse-1.0 阿里 4 月匿名登顶后退居前列.)**结论不变:生成层是红海,Eight-Horses 护城河在「制作/平台层」—— 节奏审计、智能剪辑、字幕烧入、协作、自托管、开源、BYO 当下最强引擎.**
+- 共同缺口 (= Eight-Horses 的护城河): 真·中文字幕烧入 · 竖屏短剧套路 · 自托管 · 自带 LLM · 开源 · 实时协作 · 节奏审计 · 智能剪辑.
 
 我想要的: **开源 + 多 Agent 协同 + 中文优先 + 自带 LLM + 实时多人协作**. 都没有. 自己造一个.
 
-8 个月, v2.0 → v12.263, 3527 个单测, MIT 开源. 这就是 **Wind Comic**.
+8 个月, v2.0 → v12.263, 3527 个单测, MIT 开源. 这就是 **Eight-Horses**.
 
 ## 核心架构
 
@@ -160,7 +160,7 @@ Reasoning 模型 (DeepSeek-r1, MiniMax-M2, o1/o3 系列) 也无缝支持 — `ca
 
 ## 链接
 
-- GitHub: https://github.com/ChrisChen667788/wind-comic
+- GitHub: https://github.com/kts-kris/eight-horses
 - ModelScope: https://www.modelscope.cn/profile/haozi667788
 - 跑起来: `git clone && npm install && npm run dev`
 
@@ -170,17 +170,17 @@ Reasoning 模型 (DeepSeek-r1, MiniMax-M2, o1/o3 系列) 也无缝支持 — `ca
 
 ## 🔥 视频号 / 抖音 评论区 短钩子
 
-> 别再用 Sora 拍 5 秒了. 我用开源工具一句话出 30 秒短剧, 还能多人协作改片. GitHub 搜 wind-comic.
+> 别再用 Sora 拍 5 秒了. 我用开源工具一句话出 30 秒短剧, 还能多人协作改片. GitHub 搜 eight-horses.
 
-> 漫剧创作者必看: 锁脸 + 中文字幕 + BGM + 实时协作 + 接你自己的 LLM. 全是开源的. 链接 GitHub: ChrisChen667788/wind-comic.
+> 漫剧创作者必看: 锁脸 + 中文字幕 + BGM + 实时协作 + 接你自己的 LLM. 全是开源的. 链接 GitHub: kts-kris/eight-horses.
 
-> 你 AI 短剧的中文字幕是不是全是鬼画符? 试试 wind-comic, ffmpeg + PingFang 真烧字幕, 终结鬼画符.
+> 你 AI 短剧的中文字幕是不是全是鬼画符? 试试 eight-horses, ffmpeg + PingFang 真烧字幕, 终结鬼画符.
 
 ---
 
 ## 🔥 Twitter / 即刻 短贴
 
-> 🌬️ Wind Comic v12.263 来了
+> 🐎 Eight-Horses v12.263 来了
 >
 > · 一句 idea → 整部短剧
 > · 8 agent 流水线
@@ -189,7 +189,7 @@ Reasoning 模型 (DeepSeek-r1, MiniMax-M2, o1/o3 系列) 也无缝支持 — `ca
 > · 接你自己的 LLM (12+ provider, 0 改代码)
 > · 3527 测试全过 / MIT 开源
 >
-> github.com/ChrisChen667788/wind-comic
+> github.com/kts-kris/eight-horses
 
 ---
 
@@ -197,11 +197,11 @@ Reasoning 模型 (DeepSeek-r1, MiniMax-M2, o1/o3 系列) 也无缝支持 — `ca
 
 复制到 [modelscope.cn/profile/haozi667788](https://www.modelscope.cn/profile/haozi667788) 的简介区:
 
-> **Wind Comic 🌬️ — 开源多 Agent AI 漫剧/短剧流水线**
+> **Eight-Horses 🐎 — 开源多 Agent AI 漫剧/短剧流水线**
 >
 > 一句 idea, 8 个 agent, 一部完整短剧. 锁脸 / 锁画风 / 中文字幕真烧入 / 实时多人协作 / 接你自己的 LLM. MIT 开源.
 >
-> GitHub: github.com/ChrisChen667788/wind-comic
+> GitHub: github.com/kts-kris/eight-horses
 > v12.263 · 3527 单测全过 · 0 API key 强制依赖.
 
 详细全文 → 看 [`docs/modelscope-profile.md`](modelscope-profile.md).
@@ -210,22 +210,22 @@ Reasoning 模型 (DeepSeek-r1, MiniMax-M2, o1/o3 系列) 也无缝支持 — `ca
 
 ## 🔥 ProductHunt 标语
 
-> Wind Comic — One sentence in, a finished short drama out.
+> Eight-Horses — One sentence in, a finished short drama out.
 > Multi-agent AI pipeline. Real-time collab timeline. BYO LLM. Open source.
 
 ---
 
 ## 🔥 V2EX / Hacker News 标题
 
-> Show HN: Wind Comic – open-source multi-agent pipeline turns 1 sentence into a finished short drama
+> Show HN: Eight-Horses – open-source multi-agent pipeline turns 1 sentence into a finished short drama
 >
-> github.com/ChrisChen667788/wind-comic
+> github.com/kts-kris/eight-horses
 
 ---
 
 ## 🔥 Reddit r/aivideo r/ArtificialInteligence
 
-> [Open Source] Wind Comic - 8-agent pipeline that turns one sentence into a finished short drama with character consistency, locked visual style, real CJK subtitles, and a multiplayer timeline. MIT licensed, BYO LLM (12+ providers, 3 env vars).
+> [Open Source] Eight-Horses - 8-agent pipeline that turns one sentence into a finished short drama with character consistency, locked visual style, real CJK subtitles, and a multiplayer timeline. MIT licensed, BYO LLM (12+ providers, 3 env vars).
 
 ---
 
