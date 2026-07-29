@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Wind Comic — 一句话变完整短剧" width="100%" />
+  <img src="assets/banner.png" alt="Eight Horses — 低成本样片到原生 4K 成片" width="100%" />
 </p>
 
-<h1 align="center">🌬️ Wind Comic 风之漫剧 <sub><sup>v12.263</sup></sub></h1>
+<h1 align="center">🐎 Eight Horses 八骏 <sub><sup>v12.263</sup></sub></h1>
 
 <p align="center">
   <b>一句话进,整片短剧出 —— 剧本 · 角色 · 分镜 · 配音 · 时间线 · mp4 一条龙.</b><br/>
@@ -16,6 +16,14 @@
 <p align="center">
   <a href="README.md">English</a> · <b>简体中文</b> · <a href="docs/MARKETING-zh.md">🔥 营销文案</a> · <a href="docs/llm-providers.md">🔌 接你自己的 LLM</a>
 </p>
+
+> **Eight Horses 版本说明：**本仓库是
+> [ChrisChen667788/wind-comic](https://github.com/ChrisChen667788/wind-comic)
+> 的独立衍生版本，基于上游提交 `ef473fcd`。新增“双档出片”工作流：
+> 在既有 ComfyUI GPU 上使用 Wan2.2 或 HunyuanVideo 1.5 生成低成本 720p
+> 审片样片，确认后再一键使用 Kling v3 原生 4K 整片重渲；保留中文配音、
+> CJK 字幕、口型续跑、预算门禁、版本冻结和失败镜头断点续跑。完整说明见
+> [Eight Horses 改造说明](docs/EIGHT-HORSES.md)。原项目 MIT 版权与署名保持不变。
 
 ---
 
@@ -305,8 +313,8 @@ KPI 卡: 平均冲突分 / 反转数 / 通过状态. 每镜柱状图 + 反转 ar
 
 ```bash
 # 1. 拉代码 + 装依赖
-git clone https://github.com/ChrisChen667788/wind-comic.git
-cd wind-comic
+git clone https://github.com/kts-kris/eight-horses.git
+cd eight-horses
 npm install
 
 # 2. 配置 (3 行必填, 换 LLM provider 看 docs/llm-providers.md)
@@ -367,5 +375,5 @@ MIT. 用它 / fork 它 / 拿它创业. 唯一请求: 你做了酷功能就提 PR
 
 <p align="center">
   Built with ❤️ — 我们相信 AI 生成的剧应该像剧, 不是科技 demo.<br/>
-  <a href="https://github.com/ChrisChen667788/wind-comic/stargazers">⭐ Star 一下</a> 如果 Wind Comic 给你省了一周.
+  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star 一下</a> 如果 Eight Horses 给你省了一周.
 </p>

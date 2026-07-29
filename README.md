@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Wind Comic — One line of text. One finished short drama." width="100%" />
+  <img src="assets/banner.png" alt="Eight Horses — low-cost preview to native-4K final film" width="100%" />
 </p>
 
-<h1 align="center">🌬️ Wind Comic <sub><sup>v12.263</sup></sub></h1>
+<h1 align="center">🐎 Eight Horses <sub><sup>v12.263</sup></sub></h1>
 
 <p align="center">
   <b>One sentence in. A finished short-form drama out — script, cast, storyboards, voiceover, timeline, mp4.</b><br/>
@@ -14,10 +14,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ChrisChen667788/wind-comic/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
-  <a href="https://github.com/ChrisChen667788/wind-comic/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/ChrisChen667788/wind-comic/ci.yml?branch=main&label=CI&logo=github" alt="CI" /></a>
-  <a href="https://github.com/ChrisChen667788/wind-comic/stargazers"><img src="https://img.shields.io/github/stars/ChrisChen667788/wind-comic?style=social" alt="GitHub stars" /></a>
-  <img src="https://img.shields.io/badge/Tests-3507%2F3507-2ea44f"  alt="3507 tests passing" />
+  <a href="https://github.com/kts-kris/eight-horses/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://github.com/kts-kris/eight-horses/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kts-kris/eight-horses/ci.yml?branch=main&label=CI&logo=github" alt="CI" /></a>
+  <a href="https://github.com/kts-kris/eight-horses/stargazers"><img src="https://img.shields.io/github/stars/kts-kris/eight-horses?style=social" alt="GitHub stars" /></a>
+  <img src="https://img.shields.io/badge/Tests-3527%2F3527-2ea44f"  alt="3527 tests passing" />
   <img src="https://img.shields.io/badge/Node-20%2B-339933?logo=node.js&logoColor=white" alt="Node 20+" />
   <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js 16" />
 </p>
@@ -35,6 +35,15 @@
   ▶ <a href="https://github.com/ChrisChen667788/wind-comic/raw/main/assets/promo/wind-comic-promo-en.mp4"><b>Watch the full 39-second promo — with voiceover &amp; sound</b></a><br/>
   <sub>Real cinematic footage woven with motion-graphics · 8 distinct art styles · English narration · scored by the platform's own MiniMax music engine.</sub>
 </p>
+
+> **Eight Horses edition.** This repository is an independent derivative of
+> [ChrisChen667788/wind-comic](https://github.com/ChrisChen667788/wind-comic),
+> based on upstream commit `ef473fcd`. It adds a two-tier production workflow:
+> low-cost 720p previews on an existing ComfyUI GPU with Wan2.2 or
+> HunyuanVideo 1.5, followed by one-click Kling v3 native-4K whole-film
+> rerendering with Chinese voiceover, CJK subtitles, lip-sync resume, budget
+> guards, and revision-safe retries. See [Eight Horses notes](docs/EIGHT-HORSES.md).
+> The original MIT copyright and attribution are preserved.
 
 ---
 
@@ -239,7 +248,7 @@ After Writer finishes, we score each shot 0-10 on a Chinese-conflict-word dictio
 ### 9. **Bring Your Own LLM** (v3.1.3)
 Every text-LLM call (Director / Writer / Vision / Audit) goes through one OpenAI-compatible `chat/completions` endpoint. Want to swap to DeepSeek-r1 / GPT-4o / Claude (via OpenRouter) / Qwen-Max / local Ollama? **Edit 3 lines in `.env`. Zero code change.** See [`docs/llm-providers.md`](docs/llm-providers.md) for the full matrix.
 
-### 10. **3507 tests, TypeScript strict, no fake "coming soon"s**
+### 10. **3527 tests, TypeScript strict, no fake "coming soon"s**
 Every feature listed above is in `main`, type-checked, unit-tested, and visible at `/projects/[id]` if you `npm install && npm run dev` right now.
 
 ---
@@ -409,8 +418,8 @@ Every model call is provider-pluggable (priority chain + automatic fallback). Cr
 
 ```bash
 # 1. clone + install
-git clone https://github.com/ChrisChen667788/wind-comic.git
-cd wind-comic
+git clone https://github.com/kts-kris/eight-horses.git
+cd eight-horses
 npm install
 
 # 2. configure (3 mandatory lines, see docs/llm-providers.md for swaps)
@@ -447,7 +456,7 @@ npm run dev:ws             # Yjs WebSocket server on :1234
 
 We're open to PRs. Two things matter most:
 1. **Don't break the multi-agent contracts.** Each agent has explicit input/output shapes — see `types/agents.ts`.
-2. **Tests gate everything.** Vitest 3507/3507 must stay green. Add tests for new lib/service files.
+2. **Tests gate everything.** Vitest 3527/3527 must stay green. Add tests for new lib/service files.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the repo's contribution guide.
 
@@ -508,11 +517,11 @@ Found something? Issues and PRs are genuinely read — several of the pipeline's
 
 If Wind Comic saved you time, a star helps other creators find it.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ChrisChen667788/wind-comic&type=Date)](https://star-history.com/#ChrisChen667788/wind-comic&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kts-kris/eight-horses&type=Date)](https://star-history.com/#kts-kris/eight-horses&Date)
 
 ---
 
 <p align="center">
   Built with ❤️ by people who believe AI-generated drama should feel like a show, not a tech demo.<br/>
-  <a href="https://github.com/ChrisChen667788/wind-comic/stargazers">⭐ Star us</a> if Wind Comic saved you a week.
+  <a href="https://github.com/kts-kris/eight-horses/stargazers">⭐ Star us</a> if Eight Horses saved you a week.
 </p>

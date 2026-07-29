@@ -34,6 +34,19 @@ vi.mock('@/services/midjourney.service', () => ({
   hasMidjourney: () => false,
 }));
 
+vi.mock('@/lib/last-frame-extractor', () => ({
+  extractLastFrame: vi.fn().mockResolvedValue(null),
+  extractMiddleFrame: vi.fn().mockResolvedValue(null),
+}));
+
+vi.mock('@/services/video-composer', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/services/video-composer')>();
+  return {
+    ...actual,
+    extractKeyFrames: vi.fn().mockResolvedValue([]),
+  };
+});
+
 describe('HybridOrchestrator', () => {
   let HybridOrchestrator: any;
 
